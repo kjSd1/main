@@ -3,6 +3,8 @@
 
 #include <malloc.h>
 #include <stdio.h>
+#include <assert.h>
+#include <D:\_Work\_GitHub\main\algorithms\universal\universal.h>
 
 typedef struct matrix {
     int **values; // элементы матрицы
@@ -38,5 +40,11 @@ void outputMatrix(matrix m);
 
 // Вывод массива из nMatrices матриц, хранящейся по адресу ms
 void outputMatrices(matrix *ms, int nMatrices);
+
+// Обмен строк с порядковыми номерами i1 и i2 в матрице m
+void swapRows(matrix m, int i1, int i2);
+
+// Обмен колонок с порядковыми номерами j1 и j2 в матрице m
+void swapColumns(matrix m, int j1, int j2);
 
 #endif //VSE_MATRIX_H
