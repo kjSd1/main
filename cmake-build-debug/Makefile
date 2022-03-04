@@ -176,6 +176,30 @@ data_structures/bitset/bitset.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.s
 .PHONY : data_structures/bitset/bitset.c.s
 
+data_structures/matrix/matrix.obj: data_structures/matrix/matrix.c.obj
+.PHONY : data_structures/matrix/matrix.obj
+
+# target to build an object file
+data_structures/matrix/matrix.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj
+.PHONY : data_structures/matrix/matrix.c.obj
+
+data_structures/matrix/matrix.i: data_structures/matrix/matrix.c.i
+.PHONY : data_structures/matrix/matrix.i
+
+# target to preprocess a source file
+data_structures/matrix/matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.i
+.PHONY : data_structures/matrix/matrix.c.i
+
+data_structures/matrix/matrix.s: data_structures/matrix/matrix.c.s
+.PHONY : data_structures/matrix/matrix.s
+
+# target to generate assembly for a file
+data_structures/matrix/matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.s
+.PHONY : data_structures/matrix/matrix.c.s
+
 data_structures/ordered_array_set/ordered_array_set.obj: data_structures/ordered_array_set/ordered_array_set.c.obj
 .PHONY : data_structures/ordered_array_set/ordered_array_set.obj
 
@@ -263,6 +287,9 @@ help:
 	@echo ... data_structures/bitset/bitset.obj
 	@echo ... data_structures/bitset/bitset.i
 	@echo ... data_structures/bitset/bitset.s
+	@echo ... data_structures/matrix/matrix.obj
+	@echo ... data_structures/matrix/matrix.i
+	@echo ... data_structures/matrix/matrix.s
 	@echo ... data_structures/ordered_array_set/ordered_array_set.obj
 	@echo ... data_structures/ordered_array_set/ordered_array_set.i
 	@echo ... data_structures/ordered_array_set/ordered_array_set.s

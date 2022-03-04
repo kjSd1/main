@@ -1,7 +1,8 @@
 #ifndef VSE_MATRIX_H
 #define VSE_MATRIX_H
 
-#include "malloc.h"
+#include <malloc.h>
+#include <stdio.h>
 
 typedef struct matrix {
     int **values; // элементы матрицы
@@ -25,5 +26,17 @@ void freeMemMatrix(matrix *m);
 
 // Освобождает память, выделенную под хранение массива ms из nMatrices матриц
 void freeMemMatrices(matrix *ms, int nMatrices);
+
+// Ввод матрицы m
+void inputMatrix(matrix *m);
+
+// Ввод массива из nMatrices матриц, хранящейся по адресу ms
+void inputMatrices(matrix *ms, int nMatrices);
+
+// Вывод матрицы m
+void outputMatrix(matrix m);
+
+// Вывод массива из nMatrices матриц, хранящейся по адресу ms
+void outputMatrices(matrix *ms, int nMatrices);
 
 #endif //VSE_MATRIX_H

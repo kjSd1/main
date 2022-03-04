@@ -137,7 +137,8 @@ CMakeFiles/Vse.dir/main.c.obj: ../main.c \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/errno.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/memory.h \
   ../algorithms/array/array.h \
-  ../data_structures/ordered_array_set/ordered_array_set.h
+  ../data_structures/ordered_array_set/ordered_array_set.h \
+  D:/_Work/_GitHub/vector/libs/data_structures/matrix/matrix.h
 
 
 ../algorithms/array/array.c:
@@ -163,6 +164,8 @@ C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h:
+
+D:/_Work/_GitHub/vector/libs/data_structures/matrix/matrix.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h:
 

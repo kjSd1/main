@@ -10,4 +10,6 @@ add_executable(Vse main.c
         data_structures/unordered_array_set/unordered_array_set.c
         data_structures/ordered_array_set/ordered_array_set.h
         data_structures/ordered_array_set/ordered_array_set.c
+        data_structures/matrix/matrix.h
+        data_structures/matrix/matrix.c
         )

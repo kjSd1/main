@@ -3,6 +3,7 @@
 #include "D:\_Work\_GitHub\main\data_structures\bitset\bitset.h"
 #include "D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.h"
 #include "D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.h"
+#include <D:/_Work/_GitHub/vector/libs/data_structures/matrix/matrix.h>
 
 void test_bitset_in1() {
     bitset set1 = bitset_create(31);
@@ -736,10 +737,23 @@ void test_ordered_array_set() {
 
 }
 
+void test_matrix_inputOutput() {
+    matrix *matrix1 = getMemArrayOfMatrices(3, 3, 3);
+
+    inputMatrices(matrix1, 3);
+
+    outputMatrices(matrix1, 3);
+}
+
+void test_matrix() {
+    test_matrix_inputOutput();
+}
+
 void test() {
     test_bitset();
     test_unordered_array_set();
     test_ordered_array_set();
+    test_matrix();
 }
 
 int main() {

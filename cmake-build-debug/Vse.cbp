@@ -88,6 +88,12 @@
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/bitset/bitset.h">
 			<Option target="Vse"/>
 		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/matrix/matrix.c">
+			<Option target="Vse"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/matrix/matrix.h">
+			<Option target="Vse"/>
+		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/ordered_array_set/ordered_array_set.c">
 			<Option target="Vse"/>
 		</Unit>
