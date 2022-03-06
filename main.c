@@ -800,14 +800,209 @@ void test_matrix_selectionSortColsMatrixByColCriteria() {
 
 }
 
+void test_matrix_isSquareMatrix_SquareMatrix_Size3x3() {
+    matrix m = getMemMatrix(3, 3);
+    assert(isSquareMatrix(&m));
+    freeMemMatrix(&m);
+}
+
+void test_matrix_isSquareMatrix_SquareMatrrix_Size1x1() {
+    matrix m = getMemMatrix(1, 1);
+    assert(isSquareMatrix(&m));
+    freeMemMatrix(&m);
+}
+
+void test_matrix_isSquareMatrix_ErorrSize3x4() {
+    matrix m = getMemMatrix(3, 4);
+    assert(isSquareMatrix(&m));
+    freeMemMatrix(&m);
+}
+
+void test_matrix_isSquareMatrix() {
+    test_matrix_isSquareMatrix_SquareMatrix_Size3x3();
+    test_matrix_isSquareMatrix_SquareMatrrix_Size1x1();
+    //test_matrix_isSquareMatrix_ErorrSize3x4();
+}
+
+void test_matrix_areTwoMatricesEqual_Size1x1and1x1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1}, 1, 1);
+    matrix matrix2 = getMatrixFromArray((int[]) {1}, 1, 1);
+
+    assert(areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Size3x3and3x3() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+    matrix matrix2 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+
+    assert(areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Erorr1_Size3x3and3x3() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+    matrix matrix2 = getMatrixFromArray((int[]) {1, 1, 1, 1, 1, 1, 1, 1, 1}, 3, 3);
+
+    assert(!areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Erorr2_Size3x3and3x3() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+    matrix matrix2 = getMatrixFromArray((int[]) {1, 2, 3, 4, 1, 6, 7, 8, 9}, 3, 3);
+
+    assert(!areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Erorr_Size3x3and3x2() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+    matrix matrix2 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6}, 3, 2);
+
+    assert(!areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Size1x4and1x4() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4}, 1, 4);
+    matrix matrix2 = getMatrixFromArray((int[]) {1, 2, 3, 4}, 1, 4);
+
+    assert(areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual_Size1x4and4x1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {4, 3, 2, 1}, 4, 1);
+    matrix matrix2 = getMatrixFromArray((int[]) {4, 3, 2, 1}, 4, 1);
+
+    assert(areTwoMatricesEqual(&matrix1, &matrix2));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrix2);
+}
+
+void test_matrix_areTwoMatricesEqual() {
+    test_matrix_areTwoMatricesEqual_Erorr1_Size3x3and3x3();
+    test_matrix_areTwoMatricesEqual_Erorr2_Size3x3and3x3();
+    test_matrix_areTwoMatricesEqual_Erorr_Size3x3and3x2();
+    test_matrix_areTwoMatricesEqual_Size1x1and1x1();
+    test_matrix_areTwoMatricesEqual_Size1x4and1x4();
+    test_matrix_areTwoMatricesEqual_Size3x3and3x3();
+    test_matrix_areTwoMatricesEqual_Size1x4and4x1();
+}
+
+void test_matrix_isEMatrix_EMatrix() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 0, 0, 1}, 2, 2);
+
+    assert(isEMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isEMatrix_ErrorEMatrix() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 1, 0, 1}, 2, 2);
+
+    assert(!isEMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isEMatrix_DioganalNot1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 0, 0, 1}, 2, 2);
+
+    assert(!isEMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isEMatrix_Size2x1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 0}, 2, 1);
+
+    assert(!isEMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isEMatrix() {
+    test_matrix_isEMatrix_EMatrix();
+    test_matrix_isEMatrix_ErrorEMatrix();
+    test_matrix_isEMatrix_DioganalNot1();
+    test_matrix_isEMatrix_Size2x1();
+}
+
+void test_matrix_isSymmetricMatrix_EMatrix() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 0, 0, 1}, 2, 2);
+
+    assert(isSymmetricMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isSymmetricMatrix_1digitOnDioganal() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 0, 0, 0}, 2, 2);
+
+    assert(isSymmetricMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isSymmetricMatrix_Error() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 1, 0, 0}, 2, 2);
+
+    assert(!isSymmetricMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isSymmetricMatrix_True() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 1, 1, 0}, 2, 2);
+
+    assert(isSymmetricMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isSymmetricMatrix_2x1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 1}, 2, 1);
+
+    assert(!isSymmetricMatrix(&matrix1));
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_isSymmetricMatrix() {
+    test_matrix_isSymmetricMatrix_EMatrix();
+    test_matrix_isSymmetricMatrix_True();
+    test_matrix_isSymmetricMatrix_Error();
+    test_matrix_isSymmetricMatrix_1digitOnDioganal();
+    test_matrix_isSymmetricMatrix_2x1();
+}
+
 void test_matrix() {
     //test_matrix_inputOutput();
     //test_matrix_inputOutputFromArray();
     //test_matrix_swapRows();
     //test_matrix_swapCols();
     //test_matrix_swapCols();
-    test_matrix_insertionSortRowsMatrixByRowCriteria();
-    test_matrix_selectionSortColsMatrixByColCriteria();
+    //test_matrix_insertionSortRowsMatrixByRowCriteria();
+    //test_matrix_selectionSortColsMatrixByColCriteria();
+    test_matrix_isSquareMatrix();
+    test_matrix_areTwoMatricesEqual();
+    test_matrix_isEMatrix();
+    test_matrix_isSymmetricMatrix();
 }
 
 void test() {

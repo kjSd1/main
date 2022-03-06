@@ -103,3 +103,44 @@ void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, size_t
         universalSwap(&valueCols[minIndex], &valueCols[index], sizeof(int));
     }
 }
+
+bool isSquareMatrix(matrix *m) {
+    return m->nRows == m->nCols;
+}
+
+bool areTwoMatricesEqual(matrix *m1, matrix *m2) {
+    if(m1->nRows != m2->nRows && m1->nCols != m2->nCols)
+        return 0;
+
+    for (size_t index = 0; index < m1->nRows; index++)
+        if (memcmp(m1->values[index], m2->values[index], m1->nCols * sizeof(int)) != 0)
+            return 0;
+    return 1;
+}
+
+bool isEMatrix(matrix *m) {
+    if (!isSquareMatrix(m))
+        return 0;
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++) {
+        for (size_t indexCol = 0; indexCol < m->nCols; indexCol++) {
+            if (indexRow != indexCol) {
+                if (m->values[indexRow][indexCol] != 0)
+                    return 0;
+            }
+            else if (m->values[indexRow][indexCol] != 1)
+                return 0;
+        }
+    }
+    return 1;
+}
+
+bool isSymmetricMatrix(matrix *m) {
+    if (!isSquareMatrix(m))
+        return 0;
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++) {
+        for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
+            if (m->values[indexCol][indexRow] != m->values[indexRow][indexCol])
+                return 0;
+    }
+    return 1;
+}
