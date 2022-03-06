@@ -96,10 +96,24 @@ CMakeFiles/Vse.dir/algorithms/array/array.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Vse.dir/algorithms/array/array.c.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\_Work\_GitHub\main\algorithms\array\array.c -o CMakeFiles\Vse.dir\algorithms\array\array.c.s
 
+CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj: CMakeFiles/Vse.dir/flags.make
+CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj: ../algorithms/universal/universal.c
+CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj: CMakeFiles/Vse.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj -MF CMakeFiles\Vse.dir\algorithms\universal\universal.c.obj.d -o CMakeFiles\Vse.dir\algorithms\universal\universal.c.obj -c D:\_Work\_GitHub\main\algorithms\universal\universal.c
+
+CMakeFiles/Vse.dir/algorithms/universal/universal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Vse.dir/algorithms/universal/universal.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\_Work\_GitHub\main\algorithms\universal\universal.c > CMakeFiles\Vse.dir\algorithms\universal\universal.c.i
+
+CMakeFiles/Vse.dir/algorithms/universal/universal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Vse.dir/algorithms/universal/universal.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\_Work\_GitHub\main\algorithms\universal\universal.c -o CMakeFiles\Vse.dir\algorithms\universal\universal.c.s
+
 CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj: CMakeFiles/Vse.dir/flags.make
 CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj: ../data_structures/bitset/bitset.c
 CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj: CMakeFiles/Vse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj -MF CMakeFiles\Vse.dir\data_structures\bitset\bitset.c.obj.d -o CMakeFiles\Vse.dir\data_structures\bitset\bitset.c.obj -c D:\_Work\_GitHub\main\data_structures\bitset\bitset.c
 
 CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.i: cmake_force
@@ -113,7 +127,7 @@ CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.s: cmake_force
 CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj: CMakeFiles/Vse.dir/flags.make
 CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj: ../data_structures/unordered_array_set/unordered_array_set.c
 CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj: CMakeFiles/Vse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj -MF CMakeFiles\Vse.dir\data_structures\unordered_array_set\unordered_array_set.c.obj.d -o CMakeFiles\Vse.dir\data_structures\unordered_array_set\unordered_array_set.c.obj -c D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.c
 
 CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.i: cmake_force
@@ -127,7 +141,7 @@ CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.s: 
 CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj: CMakeFiles/Vse.dir/flags.make
 CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj: ../data_structures/ordered_array_set/ordered_array_set.c
 CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj: CMakeFiles/Vse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj -MF CMakeFiles\Vse.dir\data_structures\ordered_array_set\ordered_array_set.c.obj.d -o CMakeFiles\Vse.dir\data_structures\ordered_array_set\ordered_array_set.c.obj -c D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.c
 
 CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.i: cmake_force
@@ -141,7 +155,7 @@ CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.s: cmak
 CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj: CMakeFiles/Vse.dir/flags.make
 CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj: ../data_structures/matrix/matrix.c
 CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj: CMakeFiles/Vse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj -MF CMakeFiles\Vse.dir\data_structures\matrix\matrix.c.obj.d -o CMakeFiles\Vse.dir\data_structures\matrix\matrix.c.obj -c D:\_Work\_GitHub\main\data_structures\matrix\matrix.c
 
 CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.i: cmake_force
@@ -156,6 +170,7 @@ CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.s: cmake_force
 Vse_OBJECTS = \
 "CMakeFiles/Vse.dir/main.c.obj" \
 "CMakeFiles/Vse.dir/algorithms/array/array.c.obj" \
+"CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj" \
 "CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj" \
 "CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj" \
 "CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj" \
@@ -166,6 +181,7 @@ Vse_EXTERNAL_OBJECTS =
 
 Vse.exe: CMakeFiles/Vse.dir/main.c.obj
 Vse.exe: CMakeFiles/Vse.dir/algorithms/array/array.c.obj
+Vse.exe: CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj
 Vse.exe: CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj
 Vse.exe: CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj
 Vse.exe: CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj
@@ -174,7 +190,7 @@ Vse.exe: CMakeFiles/Vse.dir/build.make
 Vse.exe: CMakeFiles/Vse.dir/linklibs.rsp
 Vse.exe: CMakeFiles/Vse.dir/objects1.rsp
 Vse.exe: CMakeFiles/Vse.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Vse.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable Vse.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Vse.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

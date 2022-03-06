@@ -9,6 +9,7 @@ void inputArray_(int *data, size_t n);
 // Вывод массива data размера n
 void outputArray_(const int *data, size_t n);
 
+// Копирует массив data размера size в массив data2 размера
 void copyArray_(const int *data, int *data2, size_t size);
 
 // Добавление элемента value в конец массива data размера n
@@ -69,5 +70,8 @@ int bin2(const int *a, const size_t n, int x);
 
 // Компоратор для целых чисел функции qsort
 int compare_ints(const void *a, const void *b);
+
+// Возвращает сумму всех элементов массива a размера n
+int getSum(int *a, size_t n);
 
 #endif //VSE_ARRAY_H

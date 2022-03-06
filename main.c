@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <assert.h>
+#include "D:\_Work\_GitHub\main\algorithms\array\array.h"
 #include "D:\_Work\_GitHub\main\data_structures\bitset\bitset.h"
 #include "D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.h"
 #include "D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.h"
-#include <D:/_Work/_GitHub/vector/libs/data_structures/matrix/matrix.h>
+#include "D:\_Work\_GitHub\main\data_structures\matrix\matrix.h"
 
 void test_bitset_in1() {
     bitset set1 = bitset_create(31);
@@ -745,8 +746,68 @@ void test_matrix_inputOutput() {
     outputMatrices(matrix1, 3);
 }
 
+void test_matrix_inputOutputFromArray() {
+    matrix matrix1 = getMatrixFromArray((int[]){1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 2);
+
+    outputMatrix(matrix1);
+}
+
+void test_matrix_swapRows() {
+    matrix matrix1 = getMemMatrix(3, 3);
+
+    inputMatrix(&matrix1);
+
+    outputMatrix(matrix1);
+
+    swapRows(matrix1, 1, 2);
+
+    outputMatrix(matrix1);
+}
+
+void test_matrix_swapCols() {
+    matrix matrix1 = getMemMatrix(3, 3);
+
+    inputMatrix(&matrix1);
+
+    outputMatrix(matrix1);
+
+    swapColumns(matrix1, 1, 2);
+
+    outputMatrix(matrix1);
+}
+
+void test_matrix_insertionSortRowsMatrixByRowCriteria() {
+    matrix matrix1 = getMatrixFromArray((int[]){9, 8, 7, 6, 5, 4, 3, 2, 1}, 3, 3);
+    //matrix matrix1 = getMatrixFromArray((int[]){1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 2);
+
+    outputMatrix(matrix1);
+
+    insertionSortRowsMatrixByRowCriteria(matrix1, getSum);
+
+    outputMatrix(matrix1);
+
+}
+
+void test_matrix_selectionSortColsMatrixByColCriteria() {
+    matrix matrix1 = getMatrixFromArray((int[]){9, 8, 7, 6, 5, 4, 3, 2, 1}, 3, 3);
+    //matrix matrix1 = getMatrixFromArray((int[]){1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 2);
+
+    outputMatrix(matrix1);
+
+    selectionSortColsMatrixByColCriteria(matrix1, getSum);
+
+    outputMatrix(matrix1);
+
+}
+
 void test_matrix() {
-    test_matrix_inputOutput();
+    //test_matrix_inputOutput();
+    //test_matrix_inputOutputFromArray();
+    //test_matrix_swapRows();
+    //test_matrix_swapCols();
+    //test_matrix_swapCols();
+    test_matrix_insertionSortRowsMatrixByRowCriteria();
+    test_matrix_selectionSortColsMatrixByColCriteria();
 }
 
 void test() {
@@ -758,7 +819,6 @@ void test() {
 
 int main() {
     test();
-
 
     return 0;
 }

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/_Work/_GitHub/main/algorithms/array/array.c" "CMakeFiles/Vse.dir/algorithms/array/array.c.obj" "gcc" "CMakeFiles/Vse.dir/algorithms/array/array.c.obj.d"
+  "D:/_Work/_GitHub/main/algorithms/universal/universal.c" "CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj" "gcc" "CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj.d"
   "D:/_Work/_GitHub/main/data_structures/bitset/bitset.c" "CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj" "gcc" "CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj.d"
   "D:/_Work/_GitHub/main/data_structures/matrix/matrix.c" "CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj" "gcc" "CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj.d"
   "D:/_Work/_GitHub/main/data_structures/ordered_array_set/ordered_array_set.c" "CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj" "gcc" "CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj.d"

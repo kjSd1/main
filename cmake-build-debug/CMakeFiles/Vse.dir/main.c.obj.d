@@ -12,11 +12,12 @@ CMakeFiles/Vse.dir/main.c.obj: D:\_Work\_GitHub\main\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/assert.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
+ D:\_Work\_GitHub\main\algorithms\array\array.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
  D:\_Work\_GitHub\main\data_structures\bitset\bitset.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
  D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
@@ -29,6 +30,6 @@ CMakeFiles/Vse.dir/main.c.obj: D:\_Work\_GitHub\main\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/memory.h \
- D:\_Work\_GitHub\main\algorithms\array\array.h \
  D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.h \
- D:/_Work/_GitHub/vector/libs/data_structures/matrix/matrix.h
+ D:\_Work\_GitHub\main\data_structures\matrix\matrix.h \
+ D:\_Work\_GitHub\main\algorithms\universal\universal.h

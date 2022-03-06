@@ -1,0 +1,245 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "data_structures",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-data_structures-Debug-bfcb40d9af3077369835.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "data_structures"
+				},
+				{
+					"build" : "data_structures/bitset",
+					"jsonFile" : "directory-data_structures.bitset-Debug-883feb599033ca0ded8f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "data_structures/bitset",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "data_structures/matrix",
+					"jsonFile" : "directory-data_structures.matrix-Debug-48bef3490bc37d63b791.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "data_structures/matrix",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "data_structures/unordered_array_set",
+					"jsonFile" : "directory-data_structures.unordered_array_set-Debug-f862f5f0357f3dceddab.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "data_structures/unordered_array_set",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "data_structures/ordered_array_set",
+					"jsonFile" : "directory-data_structures.ordered_array_set-Debug-43ddf4dc356c81bef12e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "data_structures/ordered_array_set",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "algorithms",
+					"childIndexes" : 
+					[
+						7,
+						8
+					],
+					"jsonFile" : "directory-algorithms-Debug-66cfcee42448d1569f95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "algorithms"
+				},
+				{
+					"build" : "algorithms/array",
+					"jsonFile" : "directory-algorithms.array-Debug-f67a6907209070b66732.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "algorithms/array",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "algorithms/universal",
+					"jsonFile" : "directory-algorithms.universal-Debug-f6e7583700e31a051c78.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "algorithms/universal",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"name" : "Vse",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Vse::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Vse-Debug-c99e9cd149303b75e97c.json",
+					"name" : "Vse",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "array::@971b275b60861a776598",
+					"jsonFile" : "target-array-Debug-fbd821474ec48b24573b.json",
+					"name" : "array",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "bitset::@92572885e49a8cea0b6d",
+					"jsonFile" : "target-bitset-Debug-05f8437222f73c197f4c.json",
+					"name" : "bitset",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "matrix::@79cfb5d33cb55604c858",
+					"jsonFile" : "target-matrix-Debug-296556605d31db90ee91.json",
+					"name" : "matrix",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ordered_array_set::@8c84dd25eecc1038d306",
+					"jsonFile" : "target-ordered_array_set-Debug-65dd3eb69baddf6c050a.json",
+					"name" : "ordered_array_set",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "universal::@eb035e9f91a5c0e7b5a3",
+					"jsonFile" : "target-universal-Debug-6e39144ca31e675a6463.json",
+					"name" : "universal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "unordered_array_set::@7340b7dca590db4549e5",
+					"jsonFile" : "target-unordered_array_set-Debug-4f19a9e4b3715182a5e6.json",
+					"name" : "unordered_array_set",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/_Work/_GitHub/main/cmake-build-debug",
+		"source" : "D:/_Work/_GitHub/main"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

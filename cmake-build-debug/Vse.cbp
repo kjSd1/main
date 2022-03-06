@@ -5,7 +5,7 @@
 		<Option title="Vse"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\data_structures\;CMake Files\data_structures\bitset\;CMake Files\data_structures\matrix\;CMake Files\data_structures\unordered_array_set\;CMake Files\data_structures\ordered_array_set\;CMake Files\algorithms\;CMake Files\algorithms\array\;CMake Files\algorithms\universal\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug"/>
@@ -75,42 +75,312 @@
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="bitset">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/libbitset.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 bitset"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bitset/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/libbitset.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 bitset/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/bitset/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="matrix">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/libmatrix.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 matrix"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="matrix/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/libmatrix.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 matrix/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/matrix/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unordered_array_set">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/libunordered_array_set.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 unordered_array_set"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unordered_array_set/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/libunordered_array_set.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 unordered_array_set/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/unordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ordered_array_set">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/libordered_array_set.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 ordered_array_set"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ordered_array_set/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/libordered_array_set.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 ordered_array_set/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/libarray.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 array"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/libarray.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 array/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/array/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="universal">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/libuniversal.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 universal"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="universal/fast">
+				<Option output="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/libuniversal.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 universal/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/_Work/_GitHub/main/cmake-build-debug/algorithms/universal/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="D:/_Work/_GitHub/main/algorithms/array/array.c">
 			<Option target="Vse"/>
+			<Option target="array"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/algorithms/array/array.h">
 			<Option target="Vse"/>
+			<Option target="array"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/algorithms/universal/universal.c">
+			<Option target="Vse"/>
+			<Option target="universal"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/algorithms/universal/universal.h">
+			<Option target="Vse"/>
+			<Option target="universal"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/bitset/bitset.c">
 			<Option target="Vse"/>
+			<Option target="bitset"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/bitset/bitset.h">
 			<Option target="Vse"/>
+			<Option target="bitset"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/matrix/matrix.c">
 			<Option target="Vse"/>
+			<Option target="matrix"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/matrix/matrix.h">
 			<Option target="Vse"/>
+			<Option target="matrix"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/ordered_array_set/ordered_array_set.c">
 			<Option target="Vse"/>
+			<Option target="ordered_array_set"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/ordered_array_set/ordered_array_set.h">
 			<Option target="Vse"/>
+			<Option target="ordered_array_set"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/unordered_array_set/unordered_array_set.c">
 			<Option target="Vse"/>
+			<Option target="unordered_array_set"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/unordered_array_set/unordered_array_set.h">
 			<Option target="Vse"/>
+			<Option target="unordered_array_set"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/main.c">
 			<Option target="Vse"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\data_structures\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/bitset/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\data_structures\bitset\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/matrix/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\data_structures\matrix\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/unordered_array_set/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\data_structures\unordered_array_set\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/data_structures/ordered_array_set/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\data_structures\ordered_array_set\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/algorithms/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algorithms\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/algorithms/array/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algorithms\array\"/>
+		</Unit>
+		<Unit filename="D:/_Work/_GitHub/main/algorithms/universal/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algorithms\universal\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

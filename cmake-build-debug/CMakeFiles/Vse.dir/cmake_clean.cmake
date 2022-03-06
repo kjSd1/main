@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Vse.dir/algorithms/array/array.c.obj"
   "CMakeFiles/Vse.dir/algorithms/array/array.c.obj.d"
+  "CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj"
+  "CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj.d"
   "CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj"
   "CMakeFiles/Vse.dir/data_structures/bitset/bitset.c.obj.d"
   "CMakeFiles/Vse.dir/data_structures/matrix/matrix.c.obj"

@@ -128,6 +128,84 @@ Vse/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/build
 .PHONY : Vse/fast
 
+#=============================================================================
+# Target rules for targets named bitset
+
+# Build rule for target.
+bitset: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 bitset
+.PHONY : bitset
+
+# fast build rule for target.
+bitset/fast:
+	$(MAKE) $(MAKESILENT) -f data_structures\bitset\CMakeFiles\bitset.dir\build.make data_structures/bitset/CMakeFiles/bitset.dir/build
+.PHONY : bitset/fast
+
+#=============================================================================
+# Target rules for targets named matrix
+
+# Build rule for target.
+matrix: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrix
+.PHONY : matrix
+
+# fast build rule for target.
+matrix/fast:
+	$(MAKE) $(MAKESILENT) -f data_structures\matrix\CMakeFiles\matrix.dir\build.make data_structures/matrix/CMakeFiles/matrix.dir/build
+.PHONY : matrix/fast
+
+#=============================================================================
+# Target rules for targets named unordered_array_set
+
+# Build rule for target.
+unordered_array_set: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 unordered_array_set
+.PHONY : unordered_array_set
+
+# fast build rule for target.
+unordered_array_set/fast:
+	$(MAKE) $(MAKESILENT) -f data_structures\unordered_array_set\CMakeFiles\unordered_array_set.dir\build.make data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/build
+.PHONY : unordered_array_set/fast
+
+#=============================================================================
+# Target rules for targets named ordered_array_set
+
+# Build rule for target.
+ordered_array_set: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ordered_array_set
+.PHONY : ordered_array_set
+
+# fast build rule for target.
+ordered_array_set/fast:
+	$(MAKE) $(MAKESILENT) -f data_structures\ordered_array_set\CMakeFiles\ordered_array_set.dir\build.make data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/build
+.PHONY : ordered_array_set/fast
+
+#=============================================================================
+# Target rules for targets named array
+
+# Build rule for target.
+array: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 array
+.PHONY : array
+
+# fast build rule for target.
+array/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms\array\CMakeFiles\array.dir\build.make algorithms/array/CMakeFiles/array.dir/build
+.PHONY : array/fast
+
+#=============================================================================
+# Target rules for targets named universal
+
+# Build rule for target.
+universal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 universal
+.PHONY : universal
+
+# fast build rule for target.
+universal/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms\universal\CMakeFiles\universal.dir\build.make algorithms/universal/CMakeFiles/universal.dir/build
+.PHONY : universal/fast
+
 algorithms/array/array.obj: algorithms/array/array.c.obj
 .PHONY : algorithms/array/array.obj
 
@@ -151,6 +229,30 @@ algorithms/array/array.s: algorithms/array/array.c.s
 algorithms/array/array.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/algorithms/array/array.c.s
 .PHONY : algorithms/array/array.c.s
+
+algorithms/universal/universal.obj: algorithms/universal/universal.c.obj
+.PHONY : algorithms/universal/universal.obj
+
+# target to build an object file
+algorithms/universal/universal.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/algorithms/universal/universal.c.obj
+.PHONY : algorithms/universal/universal.c.obj
+
+algorithms/universal/universal.i: algorithms/universal/universal.c.i
+.PHONY : algorithms/universal/universal.i
+
+# target to preprocess a source file
+algorithms/universal/universal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/algorithms/universal/universal.c.i
+.PHONY : algorithms/universal/universal.c.i
+
+algorithms/universal/universal.s: algorithms/universal/universal.c.s
+.PHONY : algorithms/universal/universal.s
+
+# target to generate assembly for a file
+algorithms/universal/universal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/algorithms/universal/universal.c.s
+.PHONY : algorithms/universal/universal.c.s
 
 data_structures/bitset/bitset.obj: data_structures/bitset/bitset.c.obj
 .PHONY : data_structures/bitset/bitset.obj
@@ -281,9 +383,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Vse
+	@echo ... array
+	@echo ... bitset
+	@echo ... matrix
+	@echo ... ordered_array_set
+	@echo ... universal
+	@echo ... unordered_array_set
 	@echo ... algorithms/array/array.obj
 	@echo ... algorithms/array/array.i
 	@echo ... algorithms/array/array.s
+	@echo ... algorithms/universal/universal.obj
+	@echo ... algorithms/universal/universal.i
+	@echo ... algorithms/universal/universal.s
 	@echo ... data_structures/bitset/bitset.obj
 	@echo ... data_structures/bitset/bitset.i
 	@echo ... data_structures/bitset/bitset.s

@@ -28,9 +28,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
+  "../algorithms/CMakeLists.txt"
+  "../algorithms/array/CMakeLists.txt"
+  "../algorithms/universal/CMakeLists.txt"
   "CMakeFiles/3.21.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.21.1/CMakeRCCompiler.cmake"
   "CMakeFiles/3.21.1/CMakeSystem.cmake"
+  "../data_structures/CMakeLists.txt"
+  "../data_structures/bitset/CMakeLists.txt"
+  "../data_structures/matrix/CMakeLists.txt"
+  "../data_structures/ordered_array_set/CMakeLists.txt"
+  "../data_structures/unordered_array_set/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -42,9 +50,23 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/bitset/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/matrix/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/unordered_array_set/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/ordered_array_set/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "algorithms/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "algorithms/array/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "algorithms/universal/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Vse.dir/DependInfo.cmake"
+  "data_structures/bitset/CMakeFiles/bitset.dir/DependInfo.cmake"
+  "data_structures/matrix/CMakeFiles/matrix.dir/DependInfo.cmake"
+  "data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/DependInfo.cmake"
+  "data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/DependInfo.cmake"
+  "algorithms/array/CMakeFiles/array.dir/DependInfo.cmake"
+  "algorithms/universal/CMakeFiles/universal.dir/DependInfo.cmake"
   )

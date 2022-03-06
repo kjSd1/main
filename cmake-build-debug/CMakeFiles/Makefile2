@@ -63,15 +63,152 @@ CMAKE_BINARY_DIR = D:\_Work\_GitHub\main\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/Vse.dir/all
+all: data_structures/all
+all: algorithms/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: data_structures/preinstall
+preinstall: algorithms/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Vse.dir/clean
+clean: data_structures/clean
+clean: algorithms/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory algorithms
+
+# Recursive "all" directory target.
+algorithms/all: algorithms/array/all
+algorithms/all: algorithms/universal/all
+.PHONY : algorithms/all
+
+# Recursive "preinstall" directory target.
+algorithms/preinstall: algorithms/array/preinstall
+algorithms/preinstall: algorithms/universal/preinstall
+.PHONY : algorithms/preinstall
+
+# Recursive "clean" directory target.
+algorithms/clean: algorithms/array/clean
+algorithms/clean: algorithms/universal/clean
+.PHONY : algorithms/clean
+
+#=============================================================================
+# Directory level rules for directory algorithms/array
+
+# Recursive "all" directory target.
+algorithms/array/all: algorithms/array/CMakeFiles/array.dir/all
+.PHONY : algorithms/array/all
+
+# Recursive "preinstall" directory target.
+algorithms/array/preinstall:
+.PHONY : algorithms/array/preinstall
+
+# Recursive "clean" directory target.
+algorithms/array/clean: algorithms/array/CMakeFiles/array.dir/clean
+.PHONY : algorithms/array/clean
+
+#=============================================================================
+# Directory level rules for directory algorithms/universal
+
+# Recursive "all" directory target.
+algorithms/universal/all: algorithms/universal/CMakeFiles/universal.dir/all
+.PHONY : algorithms/universal/all
+
+# Recursive "preinstall" directory target.
+algorithms/universal/preinstall:
+.PHONY : algorithms/universal/preinstall
+
+# Recursive "clean" directory target.
+algorithms/universal/clean: algorithms/universal/CMakeFiles/universal.dir/clean
+.PHONY : algorithms/universal/clean
+
+#=============================================================================
+# Directory level rules for directory data_structures
+
+# Recursive "all" directory target.
+data_structures/all: data_structures/bitset/all
+data_structures/all: data_structures/matrix/all
+data_structures/all: data_structures/unordered_array_set/all
+data_structures/all: data_structures/ordered_array_set/all
+.PHONY : data_structures/all
+
+# Recursive "preinstall" directory target.
+data_structures/preinstall: data_structures/bitset/preinstall
+data_structures/preinstall: data_structures/matrix/preinstall
+data_structures/preinstall: data_structures/unordered_array_set/preinstall
+data_structures/preinstall: data_structures/ordered_array_set/preinstall
+.PHONY : data_structures/preinstall
+
+# Recursive "clean" directory target.
+data_structures/clean: data_structures/bitset/clean
+data_structures/clean: data_structures/matrix/clean
+data_structures/clean: data_structures/unordered_array_set/clean
+data_structures/clean: data_structures/ordered_array_set/clean
+.PHONY : data_structures/clean
+
+#=============================================================================
+# Directory level rules for directory data_structures/bitset
+
+# Recursive "all" directory target.
+data_structures/bitset/all: data_structures/bitset/CMakeFiles/bitset.dir/all
+.PHONY : data_structures/bitset/all
+
+# Recursive "preinstall" directory target.
+data_structures/bitset/preinstall:
+.PHONY : data_structures/bitset/preinstall
+
+# Recursive "clean" directory target.
+data_structures/bitset/clean: data_structures/bitset/CMakeFiles/bitset.dir/clean
+.PHONY : data_structures/bitset/clean
+
+#=============================================================================
+# Directory level rules for directory data_structures/matrix
+
+# Recursive "all" directory target.
+data_structures/matrix/all: data_structures/matrix/CMakeFiles/matrix.dir/all
+.PHONY : data_structures/matrix/all
+
+# Recursive "preinstall" directory target.
+data_structures/matrix/preinstall:
+.PHONY : data_structures/matrix/preinstall
+
+# Recursive "clean" directory target.
+data_structures/matrix/clean: data_structures/matrix/CMakeFiles/matrix.dir/clean
+.PHONY : data_structures/matrix/clean
+
+#=============================================================================
+# Directory level rules for directory data_structures/ordered_array_set
+
+# Recursive "all" directory target.
+data_structures/ordered_array_set/all: data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/all
+.PHONY : data_structures/ordered_array_set/all
+
+# Recursive "preinstall" directory target.
+data_structures/ordered_array_set/preinstall:
+.PHONY : data_structures/ordered_array_set/preinstall
+
+# Recursive "clean" directory target.
+data_structures/ordered_array_set/clean: data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/clean
+.PHONY : data_structures/ordered_array_set/clean
+
+#=============================================================================
+# Directory level rules for directory data_structures/unordered_array_set
+
+# Recursive "all" directory target.
+data_structures/unordered_array_set/all: data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/all
+.PHONY : data_structures/unordered_array_set/all
+
+# Recursive "preinstall" directory target.
+data_structures/unordered_array_set/preinstall:
+.PHONY : data_structures/unordered_array_set/preinstall
+
+# Recursive "clean" directory target.
+data_structures/unordered_array_set/clean: data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/clean
+.PHONY : data_structures/unordered_array_set/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Vse.dir
@@ -80,12 +217,12 @@ clean: CMakeFiles/Vse.dir/clean
 CMakeFiles/Vse.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Vse"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Vse"
 .PHONY : CMakeFiles/Vse.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Vse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Vse.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Vse.dir/rule
@@ -98,6 +235,162 @@ Vse: CMakeFiles/Vse.dir/rule
 CMakeFiles/Vse.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/clean
 .PHONY : CMakeFiles/Vse.dir/clean
+
+#=============================================================================
+# Target rules for target data_structures/bitset/CMakeFiles/bitset.dir
+
+# All Build rule for target.
+data_structures/bitset/CMakeFiles/bitset.dir/all:
+	$(MAKE) $(MAKESILENT) -f data_structures\bitset\CMakeFiles\bitset.dir\build.make data_structures/bitset/CMakeFiles/bitset.dir/depend
+	$(MAKE) $(MAKESILENT) -f data_structures\bitset\CMakeFiles\bitset.dir\build.make data_structures/bitset/CMakeFiles/bitset.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target bitset"
+.PHONY : data_structures/bitset/CMakeFiles/bitset.dir/all
+
+# Build rule for subdir invocation for target.
+data_structures/bitset/CMakeFiles/bitset.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 data_structures/bitset/CMakeFiles/bitset.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : data_structures/bitset/CMakeFiles/bitset.dir/rule
+
+# Convenience name for target.
+bitset: data_structures/bitset/CMakeFiles/bitset.dir/rule
+.PHONY : bitset
+
+# clean rule for target.
+data_structures/bitset/CMakeFiles/bitset.dir/clean:
+	$(MAKE) $(MAKESILENT) -f data_structures\bitset\CMakeFiles\bitset.dir\build.make data_structures/bitset/CMakeFiles/bitset.dir/clean
+.PHONY : data_structures/bitset/CMakeFiles/bitset.dir/clean
+
+#=============================================================================
+# Target rules for target data_structures/matrix/CMakeFiles/matrix.dir
+
+# All Build rule for target.
+data_structures/matrix/CMakeFiles/matrix.dir/all:
+	$(MAKE) $(MAKESILENT) -f data_structures\matrix\CMakeFiles\matrix.dir\build.make data_structures/matrix/CMakeFiles/matrix.dir/depend
+	$(MAKE) $(MAKESILENT) -f data_structures\matrix\CMakeFiles\matrix.dir\build.make data_structures/matrix/CMakeFiles/matrix.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target matrix"
+.PHONY : data_structures/matrix/CMakeFiles/matrix.dir/all
+
+# Build rule for subdir invocation for target.
+data_structures/matrix/CMakeFiles/matrix.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 data_structures/matrix/CMakeFiles/matrix.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : data_structures/matrix/CMakeFiles/matrix.dir/rule
+
+# Convenience name for target.
+matrix: data_structures/matrix/CMakeFiles/matrix.dir/rule
+.PHONY : matrix
+
+# clean rule for target.
+data_structures/matrix/CMakeFiles/matrix.dir/clean:
+	$(MAKE) $(MAKESILENT) -f data_structures\matrix\CMakeFiles\matrix.dir\build.make data_structures/matrix/CMakeFiles/matrix.dir/clean
+.PHONY : data_structures/matrix/CMakeFiles/matrix.dir/clean
+
+#=============================================================================
+# Target rules for target data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir
+
+# All Build rule for target.
+data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/all:
+	$(MAKE) $(MAKESILENT) -f data_structures\unordered_array_set\CMakeFiles\unordered_array_set.dir\build.make data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/depend
+	$(MAKE) $(MAKESILENT) -f data_structures\unordered_array_set\CMakeFiles\unordered_array_set.dir\build.make data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target unordered_array_set"
+.PHONY : data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/all
+
+# Build rule for subdir invocation for target.
+data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/rule
+
+# Convenience name for target.
+unordered_array_set: data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/rule
+.PHONY : unordered_array_set
+
+# clean rule for target.
+data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/clean:
+	$(MAKE) $(MAKESILENT) -f data_structures\unordered_array_set\CMakeFiles\unordered_array_set.dir\build.make data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/clean
+.PHONY : data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/clean
+
+#=============================================================================
+# Target rules for target data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir
+
+# All Build rule for target.
+data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/all:
+	$(MAKE) $(MAKESILENT) -f data_structures\ordered_array_set\CMakeFiles\ordered_array_set.dir\build.make data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/depend
+	$(MAKE) $(MAKESILENT) -f data_structures\ordered_array_set\CMakeFiles\ordered_array_set.dir\build.make data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target ordered_array_set"
+.PHONY : data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/all
+
+# Build rule for subdir invocation for target.
+data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/rule
+
+# Convenience name for target.
+ordered_array_set: data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/rule
+.PHONY : ordered_array_set
+
+# clean rule for target.
+data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/clean:
+	$(MAKE) $(MAKESILENT) -f data_structures\ordered_array_set\CMakeFiles\ordered_array_set.dir\build.make data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/clean
+.PHONY : data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/clean
+
+#=============================================================================
+# Target rules for target algorithms/array/CMakeFiles/array.dir
+
+# All Build rule for target.
+algorithms/array/CMakeFiles/array.dir/all:
+	$(MAKE) $(MAKESILENT) -f algorithms\array\CMakeFiles\array.dir\build.make algorithms/array/CMakeFiles/array.dir/depend
+	$(MAKE) $(MAKESILENT) -f algorithms\array\CMakeFiles\array.dir\build.make algorithms/array/CMakeFiles/array.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target array"
+.PHONY : algorithms/array/CMakeFiles/array.dir/all
+
+# Build rule for subdir invocation for target.
+algorithms/array/CMakeFiles/array.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 algorithms/array/CMakeFiles/array.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : algorithms/array/CMakeFiles/array.dir/rule
+
+# Convenience name for target.
+array: algorithms/array/CMakeFiles/array.dir/rule
+.PHONY : array
+
+# clean rule for target.
+algorithms/array/CMakeFiles/array.dir/clean:
+	$(MAKE) $(MAKESILENT) -f algorithms\array\CMakeFiles\array.dir\build.make algorithms/array/CMakeFiles/array.dir/clean
+.PHONY : algorithms/array/CMakeFiles/array.dir/clean
+
+#=============================================================================
+# Target rules for target algorithms/universal/CMakeFiles/universal.dir
+
+# All Build rule for target.
+algorithms/universal/CMakeFiles/universal.dir/all:
+	$(MAKE) $(MAKESILENT) -f algorithms\universal\CMakeFiles\universal.dir\build.make algorithms/universal/CMakeFiles/universal.dir/depend
+	$(MAKE) $(MAKESILENT) -f algorithms\universal\CMakeFiles\universal.dir\build.make algorithms/universal/CMakeFiles/universal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target universal"
+.PHONY : algorithms/universal/CMakeFiles/universal.dir/all
+
+# Build rule for subdir invocation for target.
+algorithms/universal/CMakeFiles/universal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 algorithms/universal/CMakeFiles/universal.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_Work\_GitHub\main\cmake-build-debug\CMakeFiles 0
+.PHONY : algorithms/universal/CMakeFiles/universal.dir/rule
+
+# Convenience name for target.
+universal: algorithms/universal/CMakeFiles/universal.dir/rule
+.PHONY : universal
+
+# clean rule for target.
+algorithms/universal/CMakeFiles/universal.dir/clean:
+	$(MAKE) $(MAKESILENT) -f algorithms\universal\CMakeFiles\universal.dir\build.make algorithms/universal/CMakeFiles/universal.dir/clean
+.PHONY : algorithms/universal/CMakeFiles/universal.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

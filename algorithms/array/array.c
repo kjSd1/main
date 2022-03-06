@@ -152,3 +152,11 @@ int compare_ints (const void *a, const void *b) {
     if (arg1 > arg2) return 1;
     return 0;
 }
+
+int getSum(int *a, size_t n) {
+    int result = 0;
+    for (int i = 0; i < n; i++)
+        result += a[i];
+    return result;
+}
+

@@ -115,6 +115,30 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "data_structures/CMakeLists.txt"
+		},
+		{
+			"path" : "data_structures/bitset/CMakeLists.txt"
+		},
+		{
+			"path" : "data_structures/matrix/CMakeLists.txt"
+		},
+		{
+			"path" : "data_structures/unordered_array_set/CMakeLists.txt"
+		},
+		{
+			"path" : "data_structures/ordered_array_set/CMakeLists.txt"
+		},
+		{
+			"path" : "algorithms/CMakeLists.txt"
+		},
+		{
+			"path" : "algorithms/array/CMakeLists.txt"
+		},
+		{
+			"path" : "algorithms/universal/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
