@@ -29,11 +29,14 @@ matrix* getMemArrayOfMatrices(int nMatrices, int nRows, int nCols);
 // Ввод матрицу состоящую из элементов массива array
 matrix getMatrixFromArray(const int *array, int nRows, int nCols);
 
-// Освобождает память, выделенную под хранение матрицы m. Процесс освобождения изображен на рисунке
+// Освобождает память, выделенную под хранение матрицы m
 void freeMemMatrix(matrix *m);
 
 // Освобождает память, выделенную под хранение массива ms из nMatrices матриц
 void freeMemMatrices(matrix *ms, int nMatrices);
+
+// Изменяет размерность матрицы m на новую размерность newRowsTotal на newColsTotal
+void reserveMemMatrix(matrix *m, int newRowsTotal, int newColsTotal);
 
 // Ввод матрицы m
 void inputMatrix(matrix *m);
@@ -53,10 +56,10 @@ void swapRows(matrix m, int i1, int i2);
 // Обмен колонок с порядковыми номерами j1 и j2 в матрице m
 void swapColumns(matrix m, int j1, int j2);
 
-// Выполняет сортировку вставками строк матрицы m по неубыванию значения функции criteria применяемой для строк
+// Выполняет сортировку вставками строк матрицы m по не убыванию значения функции criteria применяемой для строк
 void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, size_t));
 
-// Выполняет сортировку выбором столбцов матрицы m по неубыванию значения функции criteria применяемой для столбцов
+// Выполняет сортировку выбором столбцов матрицы m по не убыванию значения функции criteria применяемой для столбцов
 void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, size_t));
 
 // Возвращает значение 'истина', если матрица m является квадратной,
@@ -67,12 +70,18 @@ bool isSquareMatrix(matrix *m);
 // 'ложь' – в противном случае
 bool areTwoMatricesEqual(matrix *m1, matrix *m2);
 
-// возвращает значение 'истина', если матрица m является единичной,
+// Возвращает значение 'истина', если матрица m является единичной,
 // 'ложь' – в противном случае
 bool isEMatrix(matrix *m);
 
-// возвращает значение 'истина', если матрица m является симметричной,
+// Возвращает значение 'истина', если матрица m является симметричной,
 // 'ложь' – в противном случае
 bool isSymmetricMatrix(matrix *m);
+
+// Транспонирует квадратную матрицу m
+void transposeSquareMatrix(matrix *m);
+
+// Транспонирует матрицу m
+void transposeMatrix(matrix *m);
 
 #endif //VSE_MATRIX_H

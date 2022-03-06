@@ -991,6 +991,38 @@ void test_matrix_isSymmetricMatrix() {
     test_matrix_isSymmetricMatrix_2x1();
 }
 
+void test_matrix_transposeMatrix_Square() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+    matrix resultMatrix = getMatrixFromArray((int[]) {1, 4, 7, 2, 5, 8, 3, 6, 9}, 3, 3);
+
+    transposeSquareMatrix(&matrix1);
+
+    assert(areTwoMatricesEqual(&matrix1, &resultMatrix));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&resultMatrix);
+}
+
+void test_matrix_transposeMatrix_Size3x4() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, 3, 4);
+    matrix resultMatrix = getMatrixFromArray((int[]) {1, 5, 9, 2, 6, 10, 3, 7, 11, 4, 8, 12}, 4, 3);
+
+    outputMatrix(matrix1);
+
+    transposeMatrix(&matrix1);
+    outputMatrix(matrix1);
+
+    //assert(areTwoMatricesEqual(&matrix1, &resultMatrix));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&resultMatrix);
+}
+
+void test_matrix_transposeMatrix() {
+    test_matrix_transposeMatrix_Square();
+    test_matrix_transposeMatrix_Size3x4();
+}
+
 void test_matrix() {
     //test_matrix_inputOutput();
     //test_matrix_inputOutputFromArray();
@@ -1003,6 +1035,7 @@ void test_matrix() {
     test_matrix_areTwoMatricesEqual();
     test_matrix_isEMatrix();
     test_matrix_isSymmetricMatrix();
+    test_matrix_transposeMatrix();
 }
 
 void test() {

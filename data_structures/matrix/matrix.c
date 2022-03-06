@@ -1,7 +1,7 @@
 #include "matrix.h"
 
 matrix getMemMatrix(int nRows, int nCols) {
-    int **values = (int**) malloc(sizeof(int*) * nRows);
+    int **values = (int**)malloc(sizeof(int*) * nRows);
     for (size_t i = 0; i < nRows; i ++)
         values[i] = (int*)malloc(sizeof(int) * nCols);
     return (matrix) {values, nRows, nCols};
@@ -30,6 +30,23 @@ void freeMemMatrix(matrix *m) {
 void freeMemMatrices(matrix *ms, int nMatrices) {
     for (size_t index = 0; index < nMatrices; index++)
         freeMemMatrix(ms++);
+}
+
+void reserveMemMatrix(matrix *m, int newRowsTotal, int newColsTotal) {
+    /*int **values = (int**) malloc(sizeof(int*) * newRowsTotal);
+    for (size_t i = 0; i < newRowsTotal; i ++)
+        values[i] = (int*)malloc(sizeof(int) * newColsTotal);
+    m->values = values;
+    m->nRows = newRowsTotal;
+    m->nCols = newColsTotal;
+    printf("%d\n", m->values);
+    printf("%d\n", &m->values);
+    printf("%d\n", *m->values);*/
+    m->values = (int **)realloc(m->values, sizeof(int *) * newRowsTotal);
+    for (size_t index = 0; index < newRowsTotal; index++)
+        m->values[index] = (int *)realloc(m->values[index], newColsTotal * sizeof(int));
+    m->nRows = newRowsTotal;
+    m->nCols = newColsTotal;
 }
 
 void inputMatrix(matrix *m) {
@@ -143,4 +160,25 @@ bool isSymmetricMatrix(matrix *m) {
                 return 0;
     }
     return 1;
+}
+
+void transposeSquareMatrix(matrix *m) {
+    for (int i = 0; i < m->nRows; ++i) {
+        for (int j = i + 1; j < m->nCols; ++j) {
+            universalSwap(&m->values[i][j], &m->values[j][i], sizeof(int));
+        }
+    }
+}
+
+void transposeMatrix(matrix *m) {
+    int array[m->nRows][m->nCols];
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
+        for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
+            array[indexRow][indexCol] = m->values[indexRow][indexCol];
+
+    reserveMemMatrix(m, m->nCols, m->nRows);
+
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
+        for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
+            m->values[indexRow][indexCol] = array[indexCol][indexRow];
 }
