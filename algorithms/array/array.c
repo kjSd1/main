@@ -130,7 +130,7 @@ size_t binarySearchMoreOrEqual_(const int *a, size_t n, int x) {
     return right;
 }
 
-int bin2(const int *a, const size_t n, int x) {
+int binarySearchNearestLeft(const int *a, const size_t n, int x) {
     int left = -1;
     int right = n;
     while (right - left > 1) {
@@ -153,10 +153,25 @@ int compare_ints (const void *a, const void *b) {
     return 0;
 }
 
-int getSum(int *a, size_t n) {
+int getSum(const int *a, size_t n) {
     int result = 0;
     for (int i = 0; i < n; i++)
         result += a[i];
     return result;
+}
+size_t getMaxElement(const int *a, const size_t n) {
+    size_t maxIndex = 0;
+    for (size_t index = 1; index < n; index++)
+        if (a[maxIndex] < a[index])
+            maxIndex = index;
+    return maxIndex;
+}
+
+size_t getMinElement(const int *a, size_t n) {
+    size_t minIndex = 0;
+    for (size_t index = 0; index < n; index++)
+        if (a[minIndex] > a[index])
+            minIndex = index;
+    return minIndex;
 }
 

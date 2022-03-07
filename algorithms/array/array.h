@@ -53,25 +53,31 @@ void forEach_(const int *source, int *dest, size_t n, const int (*predicate) (in
 
 // возвращает значение первого вхождения элемента x
 // в массиве a размера n при его наличии, иначе - n
-size_t linearSearch_(const int *a, const size_t n, int x);
+size_t linearSearch_(const int *a, size_t n, int x);
 
 // возвращает позицию вхождения элемента x
 // в отсортированном массиве a размера n при его наличии, иначе - n
-size_t binarySearch_(const int *a, const size_t n, int x);
+size_t binarySearch_(const int *a, size_t n, int x);
 
 // возвращает позицию первого элемента равного или большего x
 // в отсортированном массиве a размера n
 // при отсутствии такого элемента возвращает n
-size_t binarySearchMoreOrEqual_(const int *a, const size_t n, int x);
+size_t binarySearchMoreOrEqual_(const int *a, size_t n, int x);
 
 // Возвращает индекс ближайшего слева от X в массиве a размера n,
 // иначе, если такого нет - -1
-int bin2(const int *a, const size_t n, int x);
+int binarySearchNearestLeft(const int *a, size_t n, int x);
 
 // Компоратор для целых чисел функции qsort
 int compare_ints(const void *a, const void *b);
 
 // Возвращает сумму всех элементов массива a размера n
-int getSum(int *a, size_t n);
+int getSum(const int *a, size_t n);
+
+// Возвращает позицию первого максимального элемента массива a размера n
+size_t getMaxElement(const int *a, size_t n);
+
+// Возвращает позицию первого минимального элемента массива a размера n
+size_t getMinElement(const int *a, size_t n);
 
 #endif //VSE_ARRAY_H

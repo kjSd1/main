@@ -99,8 +99,8 @@ ordered_array_set ordered_array_set_create_from_array(const int *a, size_t size)
 void ordered_array_set_insert(ordered_array_set *set, int value) {
     ordered_array_set_isAbleAppend(set);
     if (ordered_array_set_in(*set, value) == set->size) {
-        int index = bin2(set->data, set->size, value);
-        insert_(set->data, &set->size, bin2(set->data, set->size, value) + 1, value);
+        int index = binarySearchNearestLeft(set->data, set->size, value);
+        insert_(set->data, &set->size, binarySearchNearestLeft(set->data, set->size, value) + 1, value);
     }
 }
 
