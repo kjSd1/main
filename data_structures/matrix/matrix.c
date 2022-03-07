@@ -32,23 +32,6 @@ void freeMemMatrices(matrix *ms, int nMatrices) {
         freeMemMatrix(ms++);
 }
 
-void reserveMemMatrix(matrix *m, int newRowsTotal, int newColsTotal) {
-    /*int **values = (int**) malloc(sizeof(int*) * newRowsTotal);
-    for (size_t i = 0; i < newRowsTotal; i ++)
-        values[i] = (int*)malloc(sizeof(int) * newColsTotal);
-    m->values = values;
-    m->nRows = newRowsTotal;
-    m->nCols = newColsTotal;
-    printf("%d\n", m->values);
-    printf("%d\n", &m->values);
-    printf("%d\n", *m->values);*/
-    m->values = (int **)realloc(m->values, sizeof(int *) * newRowsTotal);
-    for (size_t index = 0; index < newRowsTotal; index++)
-        m->values[index] = (int *)realloc(m->values[index], newColsTotal * sizeof(int));
-    m->nRows = newRowsTotal;
-    m->nCols = newColsTotal;
-}
-
 void inputMatrix(matrix *m) {
     for (size_t indexRows = 0; indexRows < m->nRows; indexRows++)
         for (size_t indexCols = 0; indexCols < m->nCols; indexCols++)
@@ -76,19 +59,19 @@ void outputMatrices(matrix *ms, int nMatrices) {
     }
 }
 
-void swapRows(matrix m, int i1, int i2) {
+void swapRows(matrix m, size_t i1, size_t i2) {
     assert(i1 >= 0 && i1 < m.nRows && i2 >= 0 && i2 < m.nRows);
     universalSwap(&m.values[i1], &m.values[i2], sizeof(int *));
 }
 
-void swapColumns(matrix m, int j1, int j2) {
+void swapColumns(matrix m, size_t j1, size_t j2) {
     assert(j1 >= 0 && j1 < m.nCols && j2 >= 0 && j2 < m.nCols);
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
         universalSwap(&m.values[indexRow][j1], &m.values[indexRow][j2], sizeof(int));
 
 }
 
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, size_t)) {
+void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(const int*, size_t)) {
     int *valueRows = (int *)calloc(m.nRows, sizeof(int));
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
         valueRows[indexRow] = criteria(m.values[indexRow], m.nCols);
@@ -101,7 +84,7 @@ void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, size_t
     free(valueRows);
 }
 
-void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, size_t)) {
+void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(const int*, size_t)) {
     int *valueCols = (int *)calloc(m.nCols, sizeof(int));
     int *dimensionArray = (int *)calloc(m.nRows, sizeof(int));
     for (size_t indexColumn = 0; indexColumn < m.nCols; indexColumn++) {
@@ -189,4 +172,28 @@ void transposeMatrix(matrix *m) {
     for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
         for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
             m->values[indexRow][indexCol] = array[indexCol][indexRow];
+}
+
+position getMinValuePos(matrix m) {
+    position minPos = {0, 0};
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++) {
+        size_t minIndex = getMinElement(m.values[indexRow], m.nCols);
+        if (m.values[minPos.rowIndex][minPos.colIndex] > m.values[indexRow][minIndex]) {
+            minPos.rowIndex = indexRow;
+            minPos.colIndex = minIndex;
+        }
+    }
+    return minPos;
+}
+
+position getMaxValuePos(matrix m) {
+    position maxPos = {0, 0};
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++) {
+        size_t maxIndex = getMaxElement(m.values[indexRow], m.nCols);
+        if (m.values[maxPos.rowIndex][maxPos.colIndex] < m.values[indexRow][maxIndex]) {
+            maxPos.rowIndex = indexRow;
+            maxPos.colIndex = maxIndex;
+        }
+    }
+    return maxPos;
 }

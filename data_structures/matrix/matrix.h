@@ -16,8 +16,8 @@ typedef struct matrix {
 }matrix;
 
 typedef struct position{
-    int rowIndex;
-    int colIndex;
+    size_t rowIndex;
+    size_t colIndex;
 }position;
 
 // Возвращает матрицу размером nRows на nCols
@@ -35,9 +35,6 @@ void freeMemMatrix(matrix *m);
 // Освобождает память, выделенную под хранение массива ms из nMatrices матриц
 void freeMemMatrices(matrix *ms, int nMatrices);
 
-// Изменяет размерность матрицы m на новую размерность newRowsTotal на newColsTotal
-void reserveMemMatrix(matrix *m, int newRowsTotal, int newColsTotal);
-
 // Ввод матрицы m
 void inputMatrix(matrix *m);
 
@@ -51,16 +48,16 @@ void outputMatrix(matrix m);
 void outputMatrices(matrix *ms, int nMatrices);
 
 // Обмен строк с порядковыми номерами i1 и i2 в матрице m
-void swapRows(matrix m, int i1, int i2);
+void swapRows(matrix m, size_t i1, size_t i2);
 
 // Обмен колонок с порядковыми номерами j1 и j2 в матрице m
-void swapColumns(matrix m, int j1, int j2);
+void swapColumns(matrix m, size_t j1, size_t j2);
 
 // Выполняет сортировку вставками строк матрицы m по не убыванию значения функции criteria применяемой для строк
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, size_t));
+void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(const int*, size_t));
 
 // Выполняет сортировку выбором столбцов матрицы m по не убыванию значения функции criteria применяемой для столбцов
-void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, size_t));
+void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(const int*, size_t));
 
 // Возвращает значение 'истина', если матрица m является квадратной,
 // 'ложь' – в противном случае
@@ -83,5 +80,11 @@ void transposeSquareMatrix(matrix *m);
 
 // Транспонирует матрицу m
 void transposeMatrix(matrix *m);
+
+/* Возвращает позицию минимального элемента матрицы m */
+position getMinValuePos(matrix m);
+
+/* Возвращает позицию максимального элемента матрицы m */
+position getMaxValuePos(matrix m);
 
 #endif //VSE_MATRIX_H

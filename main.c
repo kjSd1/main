@@ -1033,6 +1033,33 @@ void test_matrix_transposeMatrix() {
     test_matrix_transposeMatrix_Size3x4();
 }
 
+void test_matrix_MinMax1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
+
+    position posMax = getMaxValuePos(matrix1);
+    position posMin = getMinValuePos(matrix1);
+
+    assert(posMax.rowIndex == 2 && posMax.colIndex == 2 && posMin.rowIndex == 0 && posMin.colIndex == 0);
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_MinMax2() {
+    matrix matrix1 = getMatrixFromArray((int[]) {5, 2, 8, 4, 5, 1, 7, 8}, 4, 2);
+
+    position posMax = getMaxValuePos(matrix1);
+    position posMin = getMinValuePos(matrix1);
+
+    assert(posMax.rowIndex == 1 && posMax.colIndex == 0 && posMin.rowIndex == 2 && posMin.colIndex == 1);
+
+    freeMemMatrix(&matrix1);
+}
+
+void test_matrix_MinMax() {
+    test_matrix_MinMax1();
+    test_matrix_MinMax2();
+}
+
 void test_matrix() {
     //test_matrix_inputOutput();
     //test_matrix_inputOutputFromArray();
@@ -1046,6 +1073,7 @@ void test_matrix() {
     test_matrix_isEMatrix();
     test_matrix_isSymmetricMatrix();
     test_matrix_transposeMatrix();
+    test_matrix_MinMax();
 }
 
 void test() {
