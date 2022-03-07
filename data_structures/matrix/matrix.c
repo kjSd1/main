@@ -176,7 +176,15 @@ void transposeMatrix(matrix *m) {
         for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
             array[indexRow][indexCol] = m->values[indexRow][indexCol];
 
-    reserveMemMatrix(m, m->nCols, m->nRows);
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
+        free(m->values[indexRow]);
+    free(m->values);
+
+    universalSwap(&m->nCols, &m->nRows, sizeof(int));
+
+    m->values = calloc(m->nRows, sizeof(int *));
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
+        m->values[indexRow] = calloc(m->nCols, sizeof(int));
 
     for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
         for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
