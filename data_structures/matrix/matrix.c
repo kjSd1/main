@@ -7,7 +7,7 @@ matrix getMemMatrix(int nRows, int nCols) {
     return (matrix) {values, nRows, nCols};
 }
 
-matrix* getMemArrayOfMatrices(int nMatrices, int nRows, int nCols) {
+matrix* getMemArrayOfMatrices(size_t nMatrices, int nRows, int nCols) {
     matrix *matrixArray = (matrix*)calloc(nMatrices, sizeof(matrix));
     for (size_t index = 0; index < nMatrices; index++)
         matrixArray[index] = getMemMatrix(nRows, nCols);
@@ -20,6 +20,14 @@ matrix getMatrixFromArray(const int *array, int nRows, int nCols) {
         copyArray_(&array[indexRow * newMatrix.nCols], newMatrix.values[indexRow], newMatrix.nCols);
     return newMatrix;
 }
+
+matrix* getArrayOfMatricesFromArray(const int *array, size_t n, int nRows, int nCols) {
+    matrix *arrayMatrices = getMemArrayOfMatrices(n, nRows, nCols);
+    for (size_t indexMatrices = 0; indexMatrices < n; indexMatrices++)
+        arrayMatrices[indexMatrices] = getMatrixFromArray(&array[nCols * nRows * indexMatrices], nRows, nCols);
+    return arrayMatrices;
+}
+
 
 void getArrayFromColum(int* arrayCol, matrix m, size_t indexCol) {
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
@@ -282,19 +290,20 @@ void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(const int
     free(valueRows);
 }
 
-bool isRowsCorrectByPredicate(matrix m, bool (*predicate) (int*, size_t)) {
+bool isRowsCorrectByPredicate(matrix m, bool (*predicate) (const int, const int)) {
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
-        if (!predicate(m.values[indexRow], m.nCols))
-            return 0;
-    return 1;
+        if (!isOrderByPredicate(m.values[indexRow], m.nCols, predicate))
+            return false;
+    return true;
 }
 
-bool isColsCorrectByPredicate(matrix m, bool (*predicate) (int*, size_t)) {
+bool isColsCorrectByPredicate(matrix m, bool (*predicate) (const int, const int)) {
     int *arrayCol = (int*)calloc(m.nRows, sizeof(int));
+    bool isCorrect = true;
     for (size_t indexCol = 0; indexCol < m.nCols; indexCol++) {
         getArrayFromColum(arrayCol, m, indexCol);
-        if (!predicate(arrayCol, m.nRows))
-            return 0;
+        if(!isOrderByPredicate(arrayCol, m.nRows, predicate))
+            isCorrect = false;
     }
-    return 1;
+    return isCorrect;
 }

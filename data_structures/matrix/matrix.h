@@ -24,10 +24,12 @@ typedef struct position{
 matrix getMemMatrix(int nRows, int nCols);
 
 // Размещает в динамической памяти массив из nMatrices матриц размером nRows на nCols
-matrix* getMemArrayOfMatrices(int nMatrices, int nRows, int nCols);
+matrix* getMemArrayOfMatrices(size_t nMatrices, int nRows, int nCols);
 
-// Ввод матрицу состоящую из элементов массива array
+// Возвращает матрицу состоящую из элементов массива array
 matrix getMatrixFromArray(const int *array, int nRows, int nCols);
+
+matrix* getArrayOfMatricesFromArray(const int *array, size_t n, int nRows, int nCols);
 
 /* Записывает в массив arrayCol элементы колонки indexCol матрицы m */
 void getArrayFromColum(int *arrayCol, matrix m, size_t indexCol);
@@ -107,8 +109,6 @@ int getMaxElementDiagonalFrom(matrix m1, position pos);
 
 void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(const int*, size_t));
 
-bool isDescendingOrderByRows(matrix m);
-
-bool isDescendingOrderByCols(matrix m);
+bool isRowsCorrectByPredicate(matrix m, bool (*predicate) (const int, const int));
 
 #endif //VSE_MATRIX_H

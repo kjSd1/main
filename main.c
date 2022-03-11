@@ -374,6 +374,8 @@ void test_unordered_array_set_intersection1() {
     assert(unordered_array_set_isEqual(resultSet, expectedSet));
     unordered_array_set_delete(set1);
     unordered_array_set_delete(set2);
+    unordered_array_set_delete(resultSet);
+    unordered_array_set_delete(expectedSet);
 }
 
 void test_unordered_array_set_intersection2() {
@@ -1364,16 +1366,62 @@ void matrix_task12_test() {
     freeMemMatrix(&matrixResult);
 }
 
-/*bool matrix_aaaaaa(matrix m) {
-
+bool leftMinOrEqual(const int a, const int b) {
+    return a <= b;
 }
 
-void matrix_task13(matrix *m, size_t n) {
+int matrix_task13(matrix *m, size_t n) {
     int count = 0;
     for (size_t index = 0; index < n; index++) {
-        m[index];
+        count += isRowsCorrectByPredicate(m[index], leftMinOrEqual);
     }
-}*/
+    return count;
+}
+
+void matrix_task13_test() {
+    matrix* arrayMatrix = getArrayOfMatricesFromArray((int[]) {7, 1, 1, 1,
+                                                               1, 6, 2, 2,
+                                                               5, 4, 2, 3,
+                                                               1, 3, 7, 9}, 4, 2, 2);
+
+    assert(matrix_task13(arrayMatrix, 4) == 2);
+    freeMemMatrices(arrayMatrix, 4);
+}
+
+int isZero(int x) {
+    return x == 0;
+}
+
+int getZeroRows(matrix m) {
+    int count = 0;
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        count += all_(m.values[indexRow], m.nCols, isZero);
+    return count;
+}
+
+void matrix_task14(matrix *m, size_t n) {
+    int *maxTotalZeroRows = calloc(n, sizeof(int));
+    for (size_t index = 0; index < n; index++) {
+        maxTotalZeroRows[index] =  getZeroRows(m[index]);
+    }
+    int max = getMaxElement(maxTotalZeroRows, n);
+    for (int i = 0; i < n; i++)
+        if (maxTotalZeroRows[i] == max)
+            outputMatrix(m[i]);
+    free(maxTotalZeroRows);
+}
+
+void matrix_task14_test() {
+    matrix *m = getArrayOfMatricesFromArray((int[]) {0, 1, 1, 0, 0, 0,
+                                                    1, 1, 2, 1, 1, 1,
+                                                    0, 0, 0, 0, 4, 7,
+                                                    0, 0, 0, 1, 0, 0,
+                                                    0, 1, 0, 2, 0, 3}, 5, 3, 2);
+    matrix_task14(m, 5);
+    freeMemMatrices(m, 5);
+}
+
+
 
 void matrix_task() {
     matrix_task1_test();
@@ -1386,8 +1434,11 @@ void matrix_task() {
     matrix_task8_test();
     matrix_task9_test();
     matrix_task10_test();
+    matrix_task10_test();
     matrix_task11_test();
     matrix_task12_test();
+    matrix_task13_test();
+    matrix_task14_test();
 }
 
 void test_matrix() {
