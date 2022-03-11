@@ -21,6 +21,17 @@ matrix getMatrixFromArray(const int *array, int nRows, int nCols) {
     return newMatrix;
 }
 
+void getArrayFromColum(int* arrayCol, matrix m, size_t indexCol) {
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        arrayCol[indexRow] = m.values[indexRow][indexCol];
+}
+
+matrix getZeroMatrix(int nRows, int nCols) {
+    matrix newMatrix = getMemMatrix(nRows, nCols);
+    doZeroMatrix(&newMatrix);
+    return newMatrix;
+}
+
 void freeMemMatrix(matrix *m) {
     for (size_t index = 0; index < m->nRows; index++)
         free(m->values[index]);
@@ -84,12 +95,11 @@ void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(const int*, 
     free(valueRows);
 }
 
-void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(const int*, size_t)) {
+void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(const int*, const size_t)) {
     int *valueCols = (int *)calloc(m.nCols, sizeof(int));
     int *dimensionArray = (int *)calloc(m.nRows, sizeof(int));
     for (size_t indexColumn = 0; indexColumn < m.nCols; indexColumn++) {
-        for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
-            dimensionArray[indexRow] = m.values[indexColumn][indexRow];
+        getArrayFromColum(dimensionArray, m, indexColumn);
         valueCols[indexColumn] = criteria(dimensionArray, m.nRows);
     }
     free(dimensionArray);
@@ -174,10 +184,16 @@ void transposeMatrix(matrix *m) {
             m->values[indexRow][indexCol] = array[indexCol][indexRow];
 }
 
-position getMinValuePos(matrix m) {
+void doZeroMatrix(matrix *m) {
+    for (size_t indexRow = 0; indexRow < m->nRows; indexRow++)
+        for (size_t indexCol = 0; indexCol < m->nCols; indexCol++)
+            m->values[indexRow][indexCol] = 0;
+}
+
+position searchMinValuePosByRows(matrix m) {
     position minPos = {0, 0};
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++) {
-        size_t minIndex = getMinElement(m.values[indexRow], m.nCols);
+        size_t minIndex = getIndexMinElement(m.values[indexRow], m.nCols);
         if (m.values[minPos.rowIndex][minPos.colIndex] > m.values[indexRow][minIndex]) {
             minPos.rowIndex = indexRow;
             minPos.colIndex = minIndex;
@@ -186,14 +202,99 @@ position getMinValuePos(matrix m) {
     return minPos;
 }
 
-position getMaxValuePos(matrix m) {
+position searchMinValuePosByCols(matrix m){
+    position minPos = {0, 0};
+    int *arrayCol = calloc(m.nRows, sizeof(int));
+    for (size_t indexCol = 0; indexCol < m.nCols; indexCol++) {
+        getArrayFromColum(arrayCol, m, indexCol);
+        size_t minIndex = getIndexMinElement(arrayCol, m.nRows);
+        if (m.values[minPos.rowIndex][minPos.colIndex] > arrayCol[minIndex]) {
+            minPos.rowIndex = minIndex;
+            minPos.colIndex = indexCol;
+        }
+    }
+    return minPos;
+
+}
+
+position searchMaxValuePosByRows(matrix m) {
     position maxPos = {0, 0};
     for (size_t indexRow = 0; indexRow < m.nRows; indexRow++) {
-        size_t maxIndex = getMaxElement(m.values[indexRow], m.nCols);
+        size_t maxIndex = getIndexMaxElement(m.values[indexRow], m.nCols);
         if (m.values[maxPos.rowIndex][maxPos.colIndex] < m.values[indexRow][maxIndex]) {
             maxPos.rowIndex = indexRow;
             maxPos.colIndex = maxIndex;
         }
     }
     return maxPos;
+}
+
+position searchMaxValuePosByCols(matrix m) {
+    position maxPos = {0, 0};
+    int *arrayCol = calloc(m.nRows, sizeof(int));
+    for (size_t indexCol = 0; indexCol < m.nCols; indexCol++) {
+        getArrayFromColum(arrayCol, m, indexCol);
+        size_t maxIndex = getIndexMinElement(arrayCol, m.nRows);
+        if (m.values[maxPos.rowIndex][maxPos.colIndex] < arrayCol[maxIndex]) {
+            maxPos.rowIndex = maxIndex;
+            maxPos.colIndex = indexCol;
+        }
+    }
+    return maxPos;
+}
+
+matrix mulMatrices(matrix m1, matrix m2) {
+    assert(isSquareMatrix(&m1) && isSquareMatrix(&m2) && m1.nRows == m2.nRows);
+
+    matrix resultMulMatrices = getMemMatrix(m1.nRows, m1.nCols);
+    doZeroMatrix(&resultMulMatrices);
+
+    int *dimensionArray = calloc(m1.nRows, sizeof(int));
+    for (size_t indexColWrite = 0; indexColWrite < m1.nCols; indexColWrite++) {
+        getArrayFromColum(dimensionArray, m2, indexColWrite);
+        for (size_t indexRowWrite = 0; indexRowWrite < m1.nRows; indexRowWrite++)
+            for (size_t indexMul = 0; indexMul < m1.nRows; indexMul++)
+                resultMulMatrices.values[indexRowWrite][indexColWrite] += dimensionArray[indexMul] * m1.values[indexRowWrite][indexMul];
+    }
+    free(dimensionArray);
+
+    return resultMulMatrices;
+}
+
+int getMaxElementDiagonalFrom(matrix m1, position pos) {
+    int max = m1.values[pos.rowIndex][pos.colIndex];
+    for (size_t indexRow = pos.rowIndex + 1, indexCol = pos.colIndex + 1; indexRow < m1.nRows && indexCol < m1.nCols; indexCol++, indexRow++)
+        if (max < m1.values[indexRow][indexCol])
+            max = m1.values[indexRow][indexCol];
+    return max;
+}
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(const int*, size_t)) {
+    float *valueRows = (float *)calloc(m.nRows, sizeof(float));
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        valueRows[indexRow] = criteria(m.values[indexRow], m.nCols);
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++) {
+        for (size_t indexInsert = indexRow; indexInsert > 0 && valueRows[indexInsert - 1] > valueRows[indexInsert]; indexInsert--) {
+            universalSwap(&valueRows[indexInsert - 1], &valueRows[indexInsert], sizeof(float));
+            swapRows(m, indexInsert, indexInsert - 1);
+        }
+    }
+    free(valueRows);
+}
+
+bool isRowsCorrectByPredicate(matrix m, bool (*predicate) (int*, size_t)) {
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        if (!predicate(m.values[indexRow], m.nCols))
+            return 0;
+    return 1;
+}
+
+bool isColsCorrectByPredicate(matrix m, bool (*predicate) (int*, size_t)) {
+    int *arrayCol = (int*)calloc(m.nRows, sizeof(int));
+    for (size_t indexCol = 0; indexCol < m.nCols; indexCol++) {
+        getArrayFromColum(arrayCol, m, indexCol);
+        if (!predicate(arrayCol, m.nRows))
+            return 0;
+    }
+    return 1;
 }

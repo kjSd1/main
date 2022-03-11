@@ -10,15 +10,16 @@ CMakeFiles/Vse.dir/main.c.obj: D:\_Work\_GitHub\main\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/assert.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/math.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/assert.h \
  D:\_Work\_GitHub\main\algorithms\array\array.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
  D:\_Work\_GitHub\main\data_structures\bitset\bitset.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
  D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/corecrt_wstdlib.h \

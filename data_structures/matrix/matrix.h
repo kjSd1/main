@@ -29,6 +29,9 @@ matrix* getMemArrayOfMatrices(int nMatrices, int nRows, int nCols);
 // Ввод матрицу состоящую из элементов массива array
 matrix getMatrixFromArray(const int *array, int nRows, int nCols);
 
+/* Записывает в массив arrayCol элементы колонки indexCol матрицы m */
+void getArrayFromColum(int *arrayCol, matrix m, size_t indexCol);
+
 // Освобождает память, выделенную под хранение матрицы m
 void freeMemMatrix(matrix *m);
 
@@ -81,10 +84,31 @@ void transposeSquareMatrix(matrix *m);
 // Транспонирует матрицу m
 void transposeMatrix(matrix *m);
 
-/* Возвращает позицию минимального элемента матрицы m */
-position getMinValuePos(matrix m);
+/* Сбрасывает все значения матрицы m в 0 */
+void doZeroMatrix(matrix *m);
 
-/* Возвращает позицию максимального элемента матрицы m */
-position getMaxValuePos(matrix m);
+/* Возвращает позицию минимального по рядам элемента матрицы m */
+position searchMinValuePosByRows(matrix m);
+
+/* Возвращает позицию минимального по столбцам элемента матрицы m */
+position searchMinValuePosByCols(matrix m);
+
+/* Возвращает позицию первого по рядам максимального элемента матрицы m */
+position searchMaxValuePosByRows(matrix m);
+
+/* Возвращает позицию первого по столбцам максимального элемента матрицы m */
+position searchMaxValuePosByCols(matrix m);
+
+/* Возвращает матрицу - результат умножения матрицы m1 и m2 */
+matrix mulMatrices(matrix m1, matrix m2);
+
+/* Возвращает сумму по диагонали матрицы m начиная с позиции pos*/
+int getMaxElementDiagonalFrom(matrix m1, position pos);
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(const int*, size_t));
+
+bool isDescendingOrderByRows(matrix m);
+
+bool isDescendingOrderByCols(matrix m);
 
 #endif //VSE_MATRIX_H

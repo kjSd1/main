@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <assert.h>
+#include <stdlib.h>
 
 void inputArray_(int *const data, const size_t n) {
     for (size_t index = 0; index < n ; index++)
@@ -159,7 +160,8 @@ int getSum(const int *a, size_t n) {
         result += a[i];
     return result;
 }
-size_t getMaxElement(const int *a, const size_t n) {
+
+size_t getIndexMaxElement(const int *a, const size_t n) {
     size_t maxIndex = 0;
     for (size_t index = 1; index < n; index++)
         if (a[maxIndex] < a[index])
@@ -167,11 +169,59 @@ size_t getMaxElement(const int *a, const size_t n) {
     return maxIndex;
 }
 
-size_t getMinElement(const int *a, size_t n) {
+size_t getIndexMinElement(const int *a, size_t n) {
     size_t minIndex = 0;
     for (size_t index = 0; index < n; index++)
         if (a[minIndex] > a[index])
             minIndex = index;
     return minIndex;
+}
+
+int getMaxElement(const int *a, const size_t n) {
+    size_t maxIndex = 0;
+    for (size_t index = 1; index < n; index++)
+        if (a[maxIndex] < a[index])
+            maxIndex = index;
+    return a[maxIndex];
+}
+
+int getMinElement(const int *a, size_t n) {
+    size_t minIndex = 0;
+    for (size_t index = 0; index < n; index++)
+        if (a[minIndex] > a[index])
+            minIndex = index;
+    return a[minIndex];
+}
+
+bool isUnique(const int *a, size_t n) {
+    for (size_t index = 0; index < n; index++)
+        for (size_t indexI = index + 1; indexI < n; indexI++)
+            if (a[index] == a[indexI])
+                return 0;
+    return 1;
+}
+
+int getValueCount(const int *a, size_t n, int value) {
+    int count = 0;
+    for (size_t index = 0; index < n; index++)
+        if (a[index] == value)
+            count++;
+    return count;
+}
+
+int getUniqueTotal(const int *a, size_t n) {
+    int uniqueTotal = n;
+    for (size_t index = 0; index < n; index++)
+        if (getValueCount(a, n, a[index]) > 1)
+            uniqueTotal--;
+
+    return uniqueTotal;
+}
+
+bool isOrderByPredicate(const int *a, size_t n, bool (*predicate) (const int a, const int b)) {
+    for (size_t index = 1; index < n; index++)
+        if (!predicate(a[index - 1], a[index]))
+            return 0;
+    return 1;
 }
 

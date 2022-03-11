@@ -2,6 +2,7 @@
 #define VSE_ARRAY_H
 
 #include <stddef.h>
+#include <stdbool.h>
 
 // Ввод массива data размера n
 void inputArray_(int *data, size_t n);
@@ -75,9 +76,36 @@ int compare_ints(const void *a, const void *b);
 int getSum(const int *a, size_t n);
 
 // Возвращает позицию первого максимального элемента массива a размера n
-size_t getMaxElement(const int *a, size_t n);
+size_t getIndexMaxElement(const int *a, size_t n);
 
 // Возвращает позицию первого минимального элемента массива a размера n
-size_t getMinElement(const int *a, size_t n);
+size_t getIndexMinElement(const int *a, size_t n);
+
+// Возвращает максимальный элемент массива a размера n
+int getMaxElement(const int *a, size_t n);
+
+// Возвращает минимальный элемент массива a размера n
+int getMinElement(const int *a, size_t n);
+
+/* Возвращает 'истина' - если все элементы уникальные,
+ * иначе - 'ложь' */
+bool isUnique(const int *a, size_t n);
+
+/* Возвращает количество вхождений элемента number в массиве a размера n */
+int getValueCount(const int *a, size_t n, int value);
+
+/* Возвращает количество уникальных элементов в массиве a размера n */
+int getUniqueTotal(const int *a, size_t n);
+
+bool isOrderByPredicate(const int *a, size_t n, bool (*predicate) (const int a, const int b));
+
+
+/* Возвращает 'истина' - если массив a размера n упорядочен по не убыванию,
+ * иначе - 'ложь' *//*
+bool isAscendingOrder(const int *a, size_t n);
+
+*//* Возвращает 'истина' - если массив a размера n упорядочен по не возрастанию,
+ * иначе - 'ложь'*//*
+bool isDescendingOrder(const int *a, size_t n);*/
 
 #endif //VSE_ARRAY_H

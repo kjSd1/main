@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <assert.h>
 #include "D:\_Work\_GitHub\main\algorithms\array\array.h"
 #include "D:\_Work\_GitHub\main\data_structures\bitset\bitset.h"
@@ -1036,8 +1037,8 @@ void test_matrix_transposeMatrix() {
 void test_matrix_MinMax1() {
     matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, 3);
 
-    position posMax = getMaxValuePos(matrix1);
-    position posMin = getMinValuePos(matrix1);
+    position posMax = searchMaxValuePosByRows(matrix1);
+    position posMin = searchMinValuePosByRows(matrix1);
 
     assert(posMax.rowIndex == 2 && posMax.colIndex == 2 && posMin.rowIndex == 0 && posMin.colIndex == 0);
 
@@ -1047,8 +1048,8 @@ void test_matrix_MinMax1() {
 void test_matrix_MinMax2() {
     matrix matrix1 = getMatrixFromArray((int[]) {5, 2, 8, 4, 5, 1, 7, 8}, 4, 2);
 
-    position posMax = getMaxValuePos(matrix1);
-    position posMin = getMinValuePos(matrix1);
+    position posMax = searchMaxValuePosByRows(matrix1);
+    position posMin = searchMinValuePosByRows(matrix1);
 
     assert(posMax.rowIndex == 1 && posMax.colIndex == 0 && posMin.rowIndex == 2 && posMin.colIndex == 1);
 
@@ -1058,6 +1059,335 @@ void test_matrix_MinMax2() {
 void test_matrix_MinMax() {
     test_matrix_MinMax1();
     test_matrix_MinMax2();
+}
+
+void matrix_task1(matrix m) {
+    position posMax = searchMaxValuePosByRows(m);
+    position posMin = searchMinValuePosByRows(m);
+    swapRows(m, posMax.rowIndex, posMin.rowIndex);
+}
+
+void matrix_task1_test() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 7, 8}, 4, 2);
+
+    matrix_task1(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {7, 8, 3, 4, 5, 6, 1, 2}, 4, 2);
+    assert(areTwoMatricesEqual(&matrix1, &matrixResult));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+void matrix_task2(matrix m) {
+    insertionSortRowsMatrixByRowCriteria(m, getMaxElement);
+}
+
+void matrix_task2_test() {
+    matrix matrix1 = getMatrixFromArray((int[]) {3, 3, 1, 1, 2, 2, 8, 8}, 4, 2);
+
+    matrix_task2(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {1, 1, 2, 2, 3, 3, 8, 8}, 4, 2);
+    assert(areTwoMatricesEqual(&matrix1, &matrixResult));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+void matrix_task3(matrix m) {
+    selectionSortColsMatrixByColCriteria(m, getMinElement);
+}
+
+void matrix_task3_test() {
+    matrix matrix1 = getMatrixFromArray((int[]) {3, 2, 4, 1, 3, 2, 4, 1}, 2, 4);
+
+    matrix_task3(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {1, 2, 3, 4, 1, 2, 3, 4}, 2, 4);
+    assert(areTwoMatricesEqual(&matrix1, &matrixResult));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+matrix matrix_task4(matrix m) {
+    if (isSymmetricMatrix(&m))
+        return mulMatrices(m, m);
+    return m;
+}
+
+void matrix_task4_test() {
+    matrix matrix1 = getMatrixFromArray((int[]) {0, 2, 3, 2, 0, 4, 3, 4, 0}, 3, 3);
+
+    matrix1 = matrix_task4(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {13, 12, 8, 12, 20, 6, 8, 6, 25}, 3, 3);
+    assert(areTwoMatricesEqual(&matrix1, &matrixResult));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+void matrix_task5(matrix m) {
+    int *sum = (int*)calloc(m.nCols, sizeof(int));
+    for (size_t index = 0; index < m.nCols; index++)
+        sum[index] = getSum(m.values[index], m.nCols);
+
+    if (isUnique(sum, m.nCols))
+        transposeSquareMatrix(&m);
+}
+
+void matrix_task5_test1() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4}, 2, 2);
+
+    matrix_task5(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {1, 3, 2, 4}, 2, 2);
+    assert(areTwoMatricesEqual(&matrixResult, &matrix1));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+void matrix_task5_test2() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 0}, 2, 2);
+
+    matrix_task5(matrix1);
+
+    matrix matrixResult = getMatrixFromArray((int[]) {1, 2, 3, 0}, 2, 2);
+    assert(areTwoMatricesEqual(&matrixResult, &matrix1));
+
+    freeMemMatrix(&matrix1);
+    freeMemMatrix(&matrixResult);
+}
+
+void matrix_task5_test() {
+    matrix_task5_test1();
+    matrix_task5_test2();
+}
+
+bool matrix_task6(matrix m1, matrix m2) {
+    matrix mulMatrix = mulMatrices(m1, m2);
+
+    bool flagEMatrix = 0;
+    if (isEMatrix(&mulMatrix))
+        flagEMatrix = 1;
+
+    freeMemMatrix(&mulMatrix);
+
+    return flagEMatrix;
+}
+
+void matrix_task6_test() {
+    matrix m1 = getMatrixFromArray((int[]) {2, 5, 7, 6, 3, 4, 5, -2, -3}, 3, 3);
+    matrix m2 = getMatrixFromArray((int[]) {1, -1, 1, -38, 41, -34, 27, -29, 24}, 3, 3);
+
+    assert(matrix_task6(m1, m2));
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
+
+int matrix_task7(matrix m) {
+    ordered_array_set setMax = ordered_array_set_create(m.nCols + m.nRows);
+
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        ordered_array_set_insert(&setMax, getMaxElementDiagonalFrom(m, (position) {indexRow, 0}));
+    for (size_t indexCol = 1; indexCol < m.nCols; indexCol++)
+        ordered_array_set_insert(&setMax, getMaxElementDiagonalFrom(m, (position) {0, indexCol}));
+
+    int sum = getSum(setMax.data, setMax.size);
+    ordered_array_set_delete(setMax);
+
+    return sum;
+}
+
+void matrix_task7_test() {
+    matrix matrix1 = getMatrixFromArray((int[]) {3, 2, 5, 4, 1, 3, 6, 3, 3, 2, 1, 2}, 3, 4);
+
+    assert(matrix_task7(matrix1) == 20);
+
+    freeMemMatrix(&matrix1);
+}
+
+int min2 (const int a, const int b) {
+    return a < b ? a : b;
+}
+
+int matrix_task8(matrix m) {
+    position posMax = searchMaxValuePosByRows(m);
+
+    int min = m.values[posMax.rowIndex][posMax.colIndex];
+
+    posMax.rowIndex--;
+    posMax.colIndex--;
+
+    size_t size = 3;
+    while (posMax.rowIndex != -1) {
+        int minOnCouch = getMinElement(&m.values[posMax.rowIndex][posMax.colIndex], size);
+        min = min2(min, minOnCouch);
+        if (posMax.colIndex) {
+            posMax.colIndex--;
+            size++;
+        }
+        if (size + posMax.colIndex < m.nCols)
+            size++;
+        posMax.rowIndex--;
+    }
+
+    return min;
+}
+
+void matrix_task8_testCheckCenter() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 10, -1, -2, -3, -4}, 3, 3);
+
+    assert(matrix_task8(matrix1) == 1);
+
+    freeMemMatrix(&matrix1);
+}
+
+void matrix_task8_testCheckLeft() {
+    matrix matrix1 = getMatrixFromArray((int[]) {9, 2, 3, 4, 1, 100, -1, -2, -3, -4, -5, -6}, 3, 4);
+
+    assert(matrix_task8(matrix1) == 2);
+
+    freeMemMatrix(&matrix1);
+}
+
+void matrix_task8_testCheckRight() {
+    matrix matrix1 = getMatrixFromArray((int[]) {1, 2, 3, 4, 5, 6, 100, -1, -2, -3, -4, -5}, 3, 4);
+
+    assert(matrix_task8(matrix1) == 2);
+
+    freeMemMatrix(&matrix1);
+}
+
+void matrix_task8_test() {
+    matrix_task8_testCheckCenter();
+    matrix_task8_testCheckLeft();
+    matrix_task8_testCheckRight();
+}
+
+float getDistance(const int *a, size_t size) {
+    int distance = 0;
+    for (size_t index = 0; index < size; index++) {
+        distance += a[index];
+    }
+
+    return sqrtf(distance);
+}
+
+void matrix_task9(matrix m) {
+    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
+
+void matrix_task9_test() {
+    matrix m = getMatrixFromArray((int[]) {20, 10, 5, 6, 4, 11, 12, 9, 4, 1, 1, 2}, 3, 4);
+
+    matrix_task9(m);
+
+    matrix resultMatrix = getMatrixFromArray((int[]) {4, 1, 1, 2, 4, 11, 12, 9, 20, 10, 5, 6}, 3, 4);
+    assert(areTwoMatricesEqual(&m, &resultMatrix));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&resultMatrix);
+}
+
+int matrix_task10(matrix m) {
+    int *sum = (int*)calloc(m.nRows, sizeof(int));
+    for (size_t indexRow = 0; indexRow < m.nRows; indexRow++)
+        sum[indexRow] = getSum(m.values[indexRow], m.nCols);
+
+    int uniqueTotal = getUniqueTotal(sum, m.nRows);
+    free(sum);
+
+    return uniqueTotal;
+}
+
+void matrix_task10_test() {
+    matrix m = getMatrixFromArray((int[]){1, 2, 3, 0, 1, 1, 2, 0, 0, 0, 1, 10}, 6, 2);
+
+    assert(matrix_task10(m) == 2);
+
+    freeMemMatrix(&m);
+}
+
+int matrix_task11(matrix m) {
+    int specialTotal  = 0;
+    int *arrayCol = (int*)calloc(m.nRows, sizeof(int));
+    for (size_t indexCol = 0; indexCol < m.nCols; indexCol++) {
+        getArrayFromColum(arrayCol, m, indexCol);
+        int max = getMaxElement(arrayCol, m.nRows);
+        specialTotal += (getSum(arrayCol, m.nRows) - max) < max;
+    }
+    return specialTotal;
+}
+
+void matrix_task11_test1() {
+    matrix m = getMatrixFromArray((int[]){3, 10, 11, 6, 3, 5, 5, 7, 3, 5, 5, 2}, 3, 4);
+
+    assert(matrix_task11(m) == 1);
+
+    freeMemMatrix(&m);
+}
+
+void matrix_task11_test2() {
+    matrix m = getMatrixFromArray((int[]){3, 5, 5, 4, 2, 3, 6, 7, 12, 2, 1, 2}, 3, 4);
+
+    assert(matrix_task11(m) == 2);
+
+    freeMemMatrix(&m);
+}
+
+void matrix_task11_test() {
+    matrix_task11_test1();
+    matrix_task11_test2();
+}
+
+void matrix_task12(matrix *m) {
+    assert(m->nRows > 1);
+    position posMinByCols = searchMinValuePosByCols(*m);
+    int* arrayCol = (int*) calloc(m->nRows, sizeof(int));
+    getArrayFromColum(arrayCol, *m, posMinByCols.colIndex);
+    copyArray_(arrayCol, m->values[m->nRows - 2], m->nRows);
+}
+
+void matrix_task12_test() {
+    matrix m = getMatrixFromArray((int[]){1, 2, 2, 1, 2, 2, 1, 2, 2}, 3, 3);
+    matrix_task12(&m);
+
+    matrix matrixResult = getMatrixFromArray((int[]){1, 2, 2, 1, 1, 1, 1, 2, 2}, 3, 3);
+    assert(areTwoMatricesEqual(&matrixResult, &m));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&matrixResult);
+}
+
+/*bool matrix_aaaaaa(matrix m) {
+
+}
+
+void matrix_task13(matrix *m, size_t n) {
+    int count = 0;
+    for (size_t index = 0; index < n; index++) {
+        m[index];
+    }
+}*/
+
+void matrix_task() {
+    matrix_task1_test();
+    matrix_task2_test();
+    matrix_task3_test();
+    matrix_task4_test();
+    matrix_task5_test();
+    matrix_task6_test();
+    matrix_task7_test();
+    matrix_task8_test();
+    matrix_task9_test();
+    matrix_task10_test();
+    matrix_task11_test();
+    matrix_task12_test();
 }
 
 void test_matrix() {
@@ -1074,6 +1404,7 @@ void test_matrix() {
     test_matrix_isSymmetricMatrix();
     test_matrix_transposeMatrix();
     test_matrix_MinMax();
+    matrix_task();
 }
 
 void test() {
