@@ -6,6 +6,7 @@
 #include "D:\_Work\_GitHub\main\data_structures\unordered_array_set\unordered_array_set.h"
 #include "D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.h"
 #include "D:\_Work\_GitHub\main\data_structures\matrix\matrix.h"
+#include "D:\_Work\_GitHub\main\data_structures\string_\string_.h"
 
 void test_bitset_in1() {
     bitset set1 = bitset_create(31);
@@ -1458,11 +1459,124 @@ void test_matrix() {
     matrix_task();
 }
 
+void test_string_StrLen_() {
+    char *s1 = "Hi";
+    char s2[10] = "\tHello\t";
+
+    assert(strLen(s1) == 2);
+    assert(strLen(s2) == 7);
+}
+
+void test_string_StrLen_Empty() {
+    char *s1 = "";
+
+    assert(strLen(s1) == 0);
+}
+
+void test_string_StrLen() {
+    test_string_StrLen_Empty();
+    test_string_StrLen_();
+}
+
+void test_string_find() {
+    char s[12] = "C++IamGOING";
+    char ch = '+';
+    char *symbol = find(&s[0], &s[11], ch);
+
+    assert(*symbol == s[1]);
+}
+
+void test_string_findNonSpace_NotSpace() {
+    char s[5] = "O(n)";
+    char *symbol = findNonSpace(s);
+
+    assert(*symbol == s[0]);
+}
+
+void test_string_findNonSpace_Space() {
+    char s[9] = " O(n ^ 2)";
+    char *symbol = findNonSpace(s);
+
+    assert(*symbol == s[1]);
+}
+
+void test_string_findNonSpace() {
+    test_string_findNonSpace_NotSpace();
+    test_string_findNonSpace_Space();
+}
+
+void test_string_findSpace_NotSpace() {
+    char s[5] = "O(n)";
+    char *symbol = findSpace(s);
+
+    assert(*symbol == s[4]);
+}
+
+void test_string_findSpace_Space() {
+    char s[9] = "O(n ^ 2)";
+    char *symbol = findSpace(s);
+
+    assert(*symbol == s[3]);
+}
+
+void test_string_findSpace() {
+    test_string_findSpace_NotSpace();
+    test_string_findSpace_Space();
+}
+
+void test_string_findNonSpaceReverse_NotSpace() {
+    char s[5] = "O(n)";
+    char *symbol = findNonSpaceReverse(&s[3], &s[-1]);
+
+    assert(*symbol == s[3]);
+}
+
+void test_string_findNonSpaceReverse_Space() {
+    char s[10] = "O(n ^ 2) ";
+    char *symbol = findNonSpaceReverse(&s[8], &s[-1]);
+
+    assert(*symbol == s[7]);
+}
+
+void test_string_findNonSpaceReverse() {
+    test_string_findNonSpaceReverse_NotSpace();
+    test_string_findNonSpaceReverse_Space();
+}
+
+void test_string_findSpaceReverse_NotSpace() {
+    char s[5] = "O(n)";
+    char *symbol = findSpaceReverse(&s[3], &s[-1]);
+
+    assert(*symbol == s[-1]);
+}
+
+void test_string_findSpaceReverse_Space() {
+    char s[9] = "O(n ^ 2)";
+    char *symbol = findSpaceReverse(&s[8], &s[-1]);
+
+    assert(*symbol == s[5]);
+}
+
+void test_string_findSpaceReverse() {
+    test_string_findSpaceReverse_NotSpace();
+    test_string_findSpaceReverse_Space();
+}
+
+void test_string_() {
+    test_string_StrLen();
+    test_string_find();
+    test_string_findNonSpace();
+    test_string_findSpace();
+    test_string_findNonSpaceReverse();
+    test_string_findSpaceReverse();
+}
+
 void test() {
     test_bitset();
     test_unordered_array_set();
     test_ordered_array_set();
     test_matrix();
+    test_string_();
 }
 
 int main() {

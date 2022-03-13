@@ -181,6 +181,19 @@ ordered_array_set/fast:
 .PHONY : ordered_array_set/fast
 
 #=============================================================================
+# Target rules for targets named string_
+
+# Build rule for target.
+string_: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 string_
+.PHONY : string_
+
+# fast build rule for target.
+string_/fast:
+	$(MAKE) $(MAKESILENT) -f data_structures\string_\CMakeFiles\string_.dir\build.make data_structures/string_/CMakeFiles/string_.dir/build
+.PHONY : string_/fast
+
+#=============================================================================
 # Target rules for targets named array
 
 # Build rule for target.
@@ -326,6 +339,30 @@ data_structures/ordered_array_set/ordered_array_set.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.s
 .PHONY : data_structures/ordered_array_set/ordered_array_set.c.s
 
+data_structures/string_/string_.obj: data_structures/string_/string_.c.obj
+.PHONY : data_structures/string_/string_.obj
+
+# target to build an object file
+data_structures/string_/string_.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/string_/string_.c.obj
+.PHONY : data_structures/string_/string_.c.obj
+
+data_structures/string_/string_.i: data_structures/string_/string_.c.i
+.PHONY : data_structures/string_/string_.i
+
+# target to preprocess a source file
+data_structures/string_/string_.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/string_/string_.c.i
+.PHONY : data_structures/string_/string_.c.i
+
+data_structures/string_/string_.s: data_structures/string_/string_.c.s
+.PHONY : data_structures/string_/string_.s
+
+# target to generate assembly for a file
+data_structures/string_/string_.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vse.dir\build.make CMakeFiles/Vse.dir/data_structures/string_/string_.c.s
+.PHONY : data_structures/string_/string_.c.s
+
 data_structures/unordered_array_set/unordered_array_set.obj: data_structures/unordered_array_set/unordered_array_set.c.obj
 .PHONY : data_structures/unordered_array_set/unordered_array_set.obj
 
@@ -387,6 +424,7 @@ help:
 	@echo ... bitset
 	@echo ... matrix
 	@echo ... ordered_array_set
+	@echo ... string_
 	@echo ... universal
 	@echo ... unordered_array_set
 	@echo ... algorithms/array/array.obj
@@ -404,6 +442,9 @@ help:
 	@echo ... data_structures/ordered_array_set/ordered_array_set.obj
 	@echo ... data_structures/ordered_array_set/ordered_array_set.i
 	@echo ... data_structures/ordered_array_set/ordered_array_set.s
+	@echo ... data_structures/string_/string_.obj
+	@echo ... data_structures/string_/string_.i
+	@echo ... data_structures/string_/string_.s
 	@echo ... data_structures/unordered_array_set/unordered_array_set.obj
 	@echo ... data_structures/unordered_array_set/unordered_array_set.i
 	@echo ... data_structures/unordered_array_set/unordered_array_set.s

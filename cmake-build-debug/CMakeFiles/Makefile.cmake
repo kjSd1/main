@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../data_structures/bitset/CMakeLists.txt"
   "../data_structures/matrix/CMakeLists.txt"
   "../data_structures/ordered_array_set/CMakeLists.txt"
+  "../data_structures/string_/CMakeLists.txt"
   "../data_structures/unordered_array_set/CMakeLists.txt"
   )
 
@@ -55,6 +56,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "data_structures/matrix/CMakeFiles/CMakeDirectoryInformation.cmake"
   "data_structures/unordered_array_set/CMakeFiles/CMakeDirectoryInformation.cmake"
   "data_structures/ordered_array_set/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_structures/string_/CMakeFiles/CMakeDirectoryInformation.cmake"
   "algorithms/CMakeFiles/CMakeDirectoryInformation.cmake"
   "algorithms/array/CMakeFiles/CMakeDirectoryInformation.cmake"
   "algorithms/universal/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -67,6 +69,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "data_structures/matrix/CMakeFiles/matrix.dir/DependInfo.cmake"
   "data_structures/unordered_array_set/CMakeFiles/unordered_array_set.dir/DependInfo.cmake"
   "data_structures/ordered_array_set/CMakeFiles/ordered_array_set.dir/DependInfo.cmake"
+  "data_structures/string_/CMakeFiles/string_.dir/DependInfo.cmake"
   "algorithms/array/CMakeFiles/array.dir/DependInfo.cmake"
   "algorithms/universal/CMakeFiles/universal.dir/DependInfo.cmake"
   )

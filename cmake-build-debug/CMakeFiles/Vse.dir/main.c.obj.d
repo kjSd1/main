@@ -33,4 +33,6 @@ CMakeFiles/Vse.dir/main.c.obj: D:\_Work\_GitHub\main\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/memory.h \
  D:\_Work\_GitHub\main\data_structures\ordered_array_set\ordered_array_set.h \
  D:\_Work\_GitHub\main\data_structures\matrix\matrix.h \
- D:\_Work\_GitHub\main\algorithms\universal\universal.h
+ D:\_Work\_GitHub\main\algorithms\universal\universal.h \
+ D:\_Work\_GitHub\main\data_structures\string_\string_.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/ctype.h

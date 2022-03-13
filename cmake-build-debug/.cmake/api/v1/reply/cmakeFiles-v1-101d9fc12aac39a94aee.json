@@ -132,6 +132,9 @@
 			"path" : "data_structures/ordered_array_set/CMakeLists.txt"
 		},
 		{
+			"path" : "data_structures/string_/CMakeLists.txt"
+		},
+		{
 			"path" : "algorithms/CMakeLists.txt"
 		},
 		{

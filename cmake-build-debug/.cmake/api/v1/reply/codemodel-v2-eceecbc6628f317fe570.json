@@ -9,7 +9,7 @@
 					"childIndexes" : 
 					[
 						1,
-						6
+						7
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -30,7 +30,8 @@
 						2,
 						3,
 						4,
-						5
+						5,
+						6
 					],
 					"jsonFile" : "directory-data_structures-Debug-bfcb40d9af3077369835.json",
 					"minimumCMakeVersion" : 
@@ -83,7 +84,7 @@
 					"source" : "data_structures/unordered_array_set",
 					"targetIndexes" : 
 					[
-						6
+						7
 					]
 				},
 				{
@@ -102,11 +103,26 @@
 					]
 				},
 				{
+					"build" : "data_structures/string_",
+					"jsonFile" : "directory-data_structures.string_-Debug-0bf3990a340158f90df9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "data_structures/string_",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
 					"build" : "algorithms",
 					"childIndexes" : 
 					[
-						7,
-						8
+						8,
+						9
 					],
 					"jsonFile" : "directory-algorithms-Debug-66cfcee42448d1569f95.json",
 					"minimumCMakeVersion" : 
@@ -124,7 +140,7 @@
 					{
 						"string" : "3.20"
 					},
-					"parentIndex" : 6,
+					"parentIndex" : 7,
 					"projectIndex" : 0,
 					"source" : "algorithms/array",
 					"targetIndexes" : 
@@ -139,12 +155,12 @@
 					{
 						"string" : "3.20"
 					},
-					"parentIndex" : 6,
+					"parentIndex" : 7,
 					"projectIndex" : 0,
 					"source" : "algorithms/universal",
 					"targetIndexes" : 
 					[
-						5
+						6
 					]
 				}
 			],
@@ -162,7 +178,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					],
 					"name" : "Vse",
 					"targetIndexes" : 
@@ -173,7 +190,8 @@
 						3,
 						4,
 						5,
-						6
+						6,
+						7
 					]
 				}
 			],
@@ -182,12 +200,12 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Vse::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Vse-Debug-c99e9cd149303b75e97c.json",
+					"jsonFile" : "target-Vse-Debug-60bea6ff1050a8b9d0e9.json",
 					"name" : "Vse",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 7,
+					"directoryIndex" : 8,
 					"id" : "array::@971b275b60861a776598",
 					"jsonFile" : "target-array-Debug-fbd821474ec48b24573b.json",
 					"name" : "array",
@@ -215,7 +233,14 @@
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 8,
+					"directoryIndex" : 6,
+					"id" : "string_::@6f2da4c1d12c05506065",
+					"jsonFile" : "target-string_-Debug-2a6b208d7dc1a12c3ebd.json",
+					"name" : "string_",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
 					"id" : "universal::@eb035e9f91a5c0e7b5a3",
 					"jsonFile" : "target-universal-Debug-6e39144ca31e675a6463.json",
 					"name" : "universal",

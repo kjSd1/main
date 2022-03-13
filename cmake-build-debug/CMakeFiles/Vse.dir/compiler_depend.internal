@@ -121,6 +121,27 @@ CMakeFiles/Vse.dir/data_structures/ordered_array_set/ordered_array_set.c.obj
  C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/memory.h
  D:/_Work/_GitHub/main/algorithms/array/array.h
 
+CMakeFiles/Vse.dir/data_structures/string_/string_.c.obj
+ D:/_Work/_GitHub/main/data_structures/string_/string_.c
+ D:/_Work/_GitHub/main/data_structures/string_/string_.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/corecrt.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/_mingw.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/_mingw_mac.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/corecrt_wstdlib.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/limits.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/malloc.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/errno.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/ctype.h
+
 CMakeFiles/Vse.dir/data_structures/unordered_array_set/unordered_array_set.c.obj
  D:/_Work/_GitHub/main/data_structures/unordered_array_set/unordered_array_set.c
  D:/_Work/_GitHub/main/data_structures/unordered_array_set/unordered_array_set.h
@@ -189,4 +210,6 @@ CMakeFiles/Vse.dir/main.c.obj
  D:/_Work/_GitHub/main/data_structures/ordered_array_set/ordered_array_set.h
  D:/_Work/_GitHub/main/data_structures/matrix/matrix.h
  D:/_Work/_GitHub/main/algorithms/universal/universal.h
+ D:/_Work/_GitHub/main/data_structures/string_/string_.h
+ C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/ctype.h
 

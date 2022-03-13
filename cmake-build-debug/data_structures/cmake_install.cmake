@@ -57,3 +57,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("D:/_Work/_GitHub/main/cmake-build-debug/data_structures/ordered_array_set/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/_Work/_GitHub/main/cmake-build-debug/data_structures/string_/cmake_install.cmake")
+endif()
+
