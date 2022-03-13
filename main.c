@@ -1562,6 +1562,33 @@ void test_string_findSpaceReverse() {
     test_string_findSpaceReverse_Space();
 }
 
+void test_string_strcmp_Negative() {
+    char s1[5] = "ABCC";
+    char s2[5] = "ABCD";
+
+    assert(strcmp_(s1, s2) < 0);
+}
+
+void test_string_strcmp_Zero() {
+    char s1[5] = "ABCD";
+    char s2[5] = "ABCD";
+
+    assert(!strcmp_(s1, s2));
+}
+
+void test_string_strcmp_Positive() {
+    char s1[5] = "ABCD";
+    char s2[5] = "ABCC";
+
+    assert(strcmp_(s1, s2) > 0);
+}
+
+void test_string_strcmp_() {
+    test_string_strcmp_Negative();
+    test_string_strcmp_Zero();
+    test_string_strcmp_Positive();
+}
+
 void test_string_() {
     test_string_StrLen();
     test_string_find();
@@ -1569,6 +1596,7 @@ void test_string_() {
     test_string_findSpace();
     test_string_findNonSpaceReverse();
     test_string_findSpaceReverse();
+    test_string_strcmp_();
 }
 
 void test() {

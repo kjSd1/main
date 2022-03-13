@@ -31,4 +31,9 @@ char* findNonSpaceReverse(char *rBegin, const char *rEnd);
  * Если символ не найден, возвращается адрес rEnd */
 char* findSpaceReverse(char *rBegin, const char *rEnd);
 
+/* Возвращает отрицательное значение, если lhs располагается до rhs в лексикографическом порядке (как в словаре),
+ * значение 0, если lhs и rhs равны,
+ * иначе – положительное значение. */
+int strcmp_(const char *lhs, const char *rhs);
+
 #endif //VSE_STRING__H
