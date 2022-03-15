@@ -1589,6 +1589,53 @@ void test_string_strcmp_() {
     test_string_strcmp_Positive();
 }
 
+void test_string_copy() {
+    char s1[6] = "Hello";
+    char s2[6];
+
+    char *ptr = copy(s1, &s1[5], s2);
+    *ptr = '\0';
+
+    assert(!strcmp_(s1, s2));
+}
+
+int isNotSpace(int x) {
+    if (isspace(x))
+        return 0;
+    return 1;
+}
+
+void test_string_copyIf() {
+    char s1[6] = "1 2 3";
+    char s2[6];
+
+    char sResult[4] = "123";
+
+    char *ptr = copyIf(s1, &s1[5], s2, isNotSpace);
+    *ptr = '\0';
+
+    assert(!strcmp_(sResult, s2));
+}
+
+void test_string_copyIfReverse() {
+    char s1[6] = "1 2 3";
+    char s2[6];
+
+    char sResult[4] = "321";
+
+    char *ptr = copyIfReverse(&s1[4], &s1[-1], s2, isNotSpace);
+    *ptr = '\0';
+
+    assert(!strcmp_(sResult, s2));
+}
+
+void test_string_getEndOfString() {
+    char s1[6] = "1 2 3";
+    char *ptrEnd = getEndOfString(s1);
+
+    assert(*ptrEnd == '3');
+}
+
 void test_string_() {
     test_string_StrLen();
     test_string_find();
@@ -1597,6 +1644,9 @@ void test_string_() {
     test_string_findNonSpaceReverse();
     test_string_findSpaceReverse();
     test_string_strcmp_();
+    test_string_copy();
+    test_string_copyIf();
+    test_string_copyIfReverse();
 }
 
 void test() {

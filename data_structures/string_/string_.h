@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include <ctype.h>
+#include <memory.h>
+#include <stdio.h>
 
 /* Возвращает количество символов в строке */
 size_t strLen(const char *s);
@@ -35,5 +37,22 @@ char* findSpaceReverse(char *rBegin, const char *rEnd);
  * значение 0, если lhs и rhs равны,
  * иначе – положительное значение. */
 int strcmp_(const char *lhs, const char *rhs);
+
+/* Записывает по адресу beginDestination фрагмент памяти, начиная с адреса beginSource до endSource.
+ * Возвращает указатель на следующий свободный фрагмент памяти в beginDestination */
+char* copy(const char *beginSource, const char *endSource, char *beginDestination);
+
+/* Записывает по адресу beginDestination элементы из фрагмента памяти начиная с beginSource заканчивая endSource,
+ * удовлетворяющие функции-предикату f.
+ * Функция возвращает указатель на следующий свободный для записи фрагмент в памяти. */
+char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int));
+
+/* Записывает по адресу beginDestination элементы из фрагмента памяти начиная с rBeginSource заканчивая rEndSource,
+ * удовлетворяющие функции-предикату f.
+ * Функция возвращает значение beginDestination по окончанию работы функции. */
+char* copyIfReverse(char *rBeginSource, const char *rEndSource, char *beginDestination, int (*f)(int));
+
+/* Возвращает указатель на последний элемент строки s */
+char* getEndOfString(char *s);
 
 #endif //VSE_STRING__H

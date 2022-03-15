@@ -31,14 +31,14 @@ char* findSpace(const char *begin) {
     return copyPtr;
 }
 
-char *findNonSpaceReverse(char *rBegin, const char *rEnd) {
+char* findNonSpaceReverse(char *rBegin, const char *rEnd) {
     while (rBegin != rEnd && isspace(*rBegin))
         rBegin--;
 
     return rBegin;
 }
 
-char *findSpaceReverse(char *rBegin, const char *rEnd) {
+char* findSpaceReverse(char *rBegin, const char *rEnd) {
     while (rBegin != rEnd && !isspace(*rBegin))
         rBegin--;
 
@@ -51,4 +51,36 @@ int strcmp_(const char *lhs, const char *rhs) {
         rhs++;
     }
     return *lhs - *rhs;
+}
+
+char* copy(const char *beginSource, const char *endSource, char *beginDestination) {
+    memcpy(beginDestination, beginSource, endSource - beginSource);
+    return beginDestination + (endSource - beginSource);
+}
+
+char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
+    while (beginSource != endSource) {
+        if (f(*beginSource))
+            *beginDestination++ = *beginSource;
+        beginSource++;
+    }
+
+    return beginDestination;
+}
+
+char* copyIfReverse(char *rBeginSource, const char *rEndSource, char *beginDestination, int (*f)(int)) {
+    while (rBeginSource != rEndSource) {
+        if (f(*rBeginSource))
+            *beginDestination++ = *rBeginSource;
+        rBeginSource--;
+    }
+    return beginDestination;
+}
+
+char* getEndOfString(char *s) {
+    char *ptrS = s;
+    while (*ptrS != '\0')
+        ptrS++;
+
+    return --ptrS;
 }
