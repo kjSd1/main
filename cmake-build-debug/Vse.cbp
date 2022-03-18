@@ -388,7 +388,6 @@
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/string_/string_.h">
 			<Option target="Vse"/>
-			<Option target="string_"/>
 		</Unit>
 		<Unit filename="D:/_Work/_GitHub/main/data_structures/unordered_array_set/unordered_array_set.c">
 			<Option target="Vse"/>
