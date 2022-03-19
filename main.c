@@ -1885,7 +1885,6 @@ void task_string10(char *s) {
     readBuffer--;
 
     char *writeString = s;
-
     WordDescriptor word;
     while (getWordBack(readBuffer, stringBuffer - 1, &word)) {
         writeString = copy(word.end, readBuffer + 1, writeString);

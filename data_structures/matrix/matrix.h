@@ -29,6 +29,7 @@ matrix* getMemArrayOfMatrices(size_t nMatrices, int nRows, int nCols);
 // Возвращает матрицу состоящую из элементов массива array
 matrix getMatrixFromArray(const int *array, int nRows, int nCols);
 
+/* Возвращает массив матриц размера nRows на nCols состоящих из массива array размера n*/
 matrix* getArrayOfMatricesFromArray(const int *array, size_t n, int nRows, int nCols);
 
 /* Записывает в массив arrayCol элементы колонки indexCol матрицы m */
@@ -107,8 +108,10 @@ matrix mulMatrices(matrix m1, matrix m2);
 /* Возвращает сумму по диагонали матрицы m начиная с позиции pos*/
 int getMaxElementDiagonalFrom(matrix m1, position pos);
 
+/* Сортировка рядов патрицы m по предикату функции criteria */
 void insertionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(const int*, size_t));
 
+/* Возвращает 'истина' - если ряды соответсвуют условию предикату predicate */
 bool isRowsCorrectByPredicate(matrix m, bool (*predicate) (const int, const int));
 
 #endif //VSE_MATRIX_H
