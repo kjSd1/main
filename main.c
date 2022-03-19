@@ -2291,6 +2291,35 @@ void test_string_task18() {
 
 }
 
+int string_task19(char *string, char *word) {
+    char stringArray[255];
+
+    char *ptrString = string;
+    if (*word == '\0' || *ptrString == '\0')
+        return 0;
+
+    while (*ptrString != '\0')
+        stringArray[*ptrString++]++;
+    while (*word != '\0')
+        if (!stringArray[*word++])
+            return 0;
+
+    return 1;
+}
+
+void test_string_task19() {
+    char s[] = "ABC BCD CDE";
+
+    char word1[] = "ABCDE";
+    assert(string_task19(s, word1));
+
+    char word2[] = "ACDZ";
+    assert(!string_task19(s, word2));
+
+    char word3[] = "";
+    assert(!string_task19(s, word3));
+}
+
 void test_string_task() {
     test_string_task1_WithSpace();
     test_string_task2();
@@ -2310,6 +2339,7 @@ void test_string_task() {
     test_string_task16();
     test_string_task17();
     test_string_task18();
+    test_string_task19();
 }
 
 void test_string_() {
