@@ -1871,13 +1871,63 @@ void test_task_string8() {
     assert(task_string8(s) == 4);
 }
 
-//----------------------------------------------------------------------------------------
-void task_string9(char *s) {
+void task_string9(char *s1, char *s2, char *result) {
+    char *resultPtr = result;
+    char *write = result;
 
+    WordDescriptor word1, word2;
+    bool isW1Found, isW2Found;
+    char *beginSearch1 = s1, *beginSearch2 = s2;
+    while ((isW1Found = getWord(beginSearch1, &word1)),
+           (isW2Found = getWord(beginSearch2, &word2)),
+           isW1Found || isW2Found) {
+        if (isW1Found) {
+            write = copy(word1.begin, word1.end, write);
+            *write++ = ' ';
+            beginSearch1 = word1.end;
+        }
+        if (isW2Found) {
+            write = copy(word2.begin, word2.end, write);
+            *write++ = ' ';
+            beginSearch2 = word2.end;
+        }
+    }
+    if (write != result)
+        write--;
+    *write = '\0';
+}
+
+void test_task_string9_StringRandom() {
+    char s[] = "AAA AAAA";
+    char s2[] = "BBB BBBB BBBBB BBB";
+    char result[strLen(s) + strLen(s2) + 1];
+    task_string9(s, s2, result);
+
+    ASSERT_STRING("AAA BBB AAAA BBBB BBBBB BBB", result);
+}
+
+void test_task_string9_Empty() {
+    char s[] = "";
+    char s2[] = " ";
+    char result[strLen(s) + strLen(s2) + 1];
+    task_string9(s, s2, result);
+
+    ASSERT_STRING("", result);
+}
+
+void test_task_string9_OneStringEmpty() {
+    char s[] = "";
+    char s2[] = "ABC";
+    char result[strLen(s) + strLen(s2) + 1];
+    task_string9(s, s2, result);
+
+    ASSERT_STRING("ABC", result);
 }
 
 void test_task_string9() {
-
+    test_task_string9_StringRandom();
+    test_task_string9_Empty();
+    test_task_string9_OneStringEmpty();
 }
 
 void task_string10(char *s) {
@@ -2250,7 +2300,7 @@ void test_string_task() {
     test_string_task6();
     //test_task_string7();
     test_task_string8();
-
+    test_task_string9();
     test_task_string10();
     test_string_task11();
     test_string_task12();
